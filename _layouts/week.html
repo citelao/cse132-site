@@ -2,12 +2,12 @@
 layout: default
 ---
 <div class="week">
-	<h1>Week {{ page.week }}</h1>
-	<a href="../">&larr; All weeks</a>
+	<h1 class="week__title">Week {{ page.week }}: {{ page.title }}</h1>
+	<a href="../" class="week__nav">&larr; All weeks</a>
 
 	<section class="week__abstract">{{ content }}</section>
 
-	<ul>
+	<ul class="week__items">
 		{% for week in site.weeks limit:20 %}  
 		<li>  
 		<span>{{ week.date | date_to_string }}</span> &raquo;  

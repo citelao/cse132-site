@@ -1,0 +1,13 @@
+.week__abstract,
+.week__title,
+.week__items {
+	@include span(6);
+	@include pre(2);
+}
+
+.week__nav {
+	@include span(2);
+	@include pull(8);
+
+	margin-top: 1.5rem;
+}
