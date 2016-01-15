@@ -1,5 +1,6 @@
 ---
 layout: writeup
+title: The Arduino
 ---
 
 # Studio {{ page.week }}: The Arduino

@@ -1,6 +1,7 @@
 ---
 layout: writeup
 title: The Super-Safe Linear Color-Gradient-a-rizer
+author: Ben Stolovitz
 ---
 
 ## The idea

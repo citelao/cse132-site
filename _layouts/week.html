@@ -1,8 +1,12 @@
 ---
 layout: default
 ---
-
 <div class="week">
+	<h1>Week {{ page.week }}</h1>
+	<a href="../">&larr; All weeks</a>
+
+	<section class="week__abstract">{{ content }}</section>
+
 	<ul>
 		{% for week in site.weeks limit:20 %}  
 		<li>  
@@ -10,7 +14,6 @@ layout: default
 		<a href="{{ BASE_PATH }}{{ week.url }}">  
 		{{ week.title }}</a>  
 			</li>  
-			{% endfor %}  
-		</ul>
-		{{ content }}
-	</div>
+		{% endfor %}  
+	</ul>
+</div>

@@ -26,3 +26,21 @@ kramdown:
 collections:
   weeks:
     output: true
+  assignments:
+  studios:
+    output: true
+  guides:
+    output: true
+
+defaults:
+- scope:
+    path: ""
+  values:
+    author: "(unknown)"
+- scope:
+    path: ""
+    type: studios
+  values:
+    week: na
+    layout: writeup
+    # permalink: /week/studio/:title
