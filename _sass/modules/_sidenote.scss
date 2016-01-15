@@ -1,0 +1,14 @@
+.sidenote {
+	background: none;
+	border-left: 0.2rem solid #b7cac4;
+
+	font-size: 0.8rem;
+
+	@include breakpoint($break-screen) {
+		@include span(4 of 6);
+		margin: 0 (0 - span(4 of 6 wide)) gutter(6) gutter(6);
+
+		float: right;
+		clear: both;
+	}
+}

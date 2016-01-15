@@ -1,4 +1,4 @@
-module Reading
+module Week
   class Generator < Jekyll::Generator
     def generate(site)
     	site.collections["weeks"].docs.map do |doc|

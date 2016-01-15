@@ -2,7 +2,11 @@
 layout: writeup
 ---
 
-# Assignment 1: The Super-Safe Linear Color-Gradient-a-rizer
+# Assignment {{ page.week }}: The Super-Safe Linear Color-Gradient-a-rizer
+{:.no_toc}
+
+* This is a TOC
+{:toc}
 
 ## The idea
 
@@ -30,6 +34,7 @@ If none of that made sense, consider reading our [Intro to Circuits](TODO).
 
 <aside class="sidenote">
 ### Analog: It's not just a remnant of the 80's!
+{:.no_toc}
 
 Your Arduino is a **digital** device. It uses discrete *digits*, not continuous signals, to represent data, unlike **analog** systems, which store information in a physical signal as a signal *level*. This difference, and our preference for digital, lies at the heart of modern computing and is why computer science students take Discrete Mathematics at this school.
 
@@ -68,7 +73,7 @@ We've never formally covered it, but you may have guessed that Arduino has two t
 
 [^involved]: Digital reading is a bit more involved. Because we usually want a single, clean signal when we digitally read something (for example, we want to know exactly if a button is pressed, ignoring noise in the signal), we have to do a bit of filtering that we haven't quite covered. With analog reads, we just treat the noise as part of the data. And in this case, noise doesn't really matter.
 
-## The Assignment
+## The assignment
 
 Let's get started with the assignment.
 
@@ -76,6 +81,7 @@ Let's get started with the assignment.
 2. 
 	<aside class="sidenote">
 	### Overwhelming circuit diagram syndrome
+	{:.no_toc}
 	Circuits are overwhelming if you haven't wired many before. Just make sure your final potentiometer circuit looks like this:
 	
 	TODO image of pot circuit + diagram

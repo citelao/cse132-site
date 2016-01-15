@@ -1,0 +1,19 @@
+/**
+ * Block-level elements
+ */
+
+aside {
+	margin: 0 (0 - gutter(6));
+	padding: 0 gutter(6) gutter(6);
+	background: #35e7fd;
+}
+
+@include breakpoint($break-screen) {
+	#markdown-toc {
+		float: left;
+		margin-left: 0 - span(2 of 6) - gutter(6);
+		width: span(2 of 6);
+		padding-left: 0; 
+		top: 0;
+	}
+}

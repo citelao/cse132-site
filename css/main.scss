@@ -3,42 +3,31 @@
 ---
 @charset "utf-8";
 
+// Sanitize.css variables
 $root-font-family: "Crimson Text", sans-serif;
 $root-line-height: 1.6;
 $root-font-size: 18px;
 $root-background-color: #f8f8f8;
 $root-color: #333;
 
+// The responsive stuff
+$break-screen: min-width 60rem;
+
+@import '../bower_components/compass-breakpoint/stylesheets/breakpoint';
 @import '../bower_components/susy/sass/susy';
 @import '../bower_components/sanitize-css/sanitize.scss';
 
 @import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,700,400italic|Source+Code+Pro|Work+Sans:700);
-
-@media print {
-	html {
-		background: #fff;
-		color: #000;
-	}
-
-	/*body {
-		margin: 1rem 2rem;
-	}*/
-}
 
 @import '../_sass/layout';
 
 @import '../_sass/typography';
 @import '../_sass/typography/headers';
 
+@import '../_sass/modules/tree';
 @import '../_sass/modules/writeup';
-@import '../_sass/modules/sidebar';
+@import '../_sass/modules/sidenote';
 
-/**
- * Block-level elements
- */
+@import '../_sass/print';
 
-aside {
-	margin: 0 -1rem;
-	padding: 0 1rem 1rem;
-	background: #35e7fd;
-}
+@import '../_sass/shame';

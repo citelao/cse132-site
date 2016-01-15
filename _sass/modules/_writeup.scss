@@ -1,8 +1,19 @@
 .writeup__nav {
-	@include span(2 of 12);
-	text-align: right;
+	@include span(10 of 12);
+	@include pre(1);
+
+	@include breakpoint($break-screen) {
+		@include span(2 of 12);
+		@include pre(0);	
+	}
 }
 
 .writeup__content {
-	@include span(6 of 12);
+	@include span(10 of 12);
+	@include pre(1);
+
+	@include breakpoint($break-screen) {
+		@include span(6 of 12);
+		@include pre(0);
+	}
 }

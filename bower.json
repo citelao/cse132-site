@@ -18,6 +18,7 @@
   ],
   "dependencies": {
     "sanitize-css": "~3.0.0",
-    "susy": "~2.2.10"
+    "susy": "~2.2.10",
+    "compass-breakpoint": "breakpoint-sass#~2.6.1"
   }
 }
