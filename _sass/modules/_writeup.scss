@@ -1,6 +1,15 @@
+.writeup {
+	display: flex;
+	align-items: baseline;
+}
+
 .writeup__nav {
+	// display: 
+
 	@include span(10 of 12);
 	@include pre(1);
+
+	margin-top: 1.5rem;
 
 	@include breakpoint($break-screen) {
 		@include span(2 of 12);

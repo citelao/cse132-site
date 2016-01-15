@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html>
-
-{% include head.html %}
-
-<body class="writeup">
-	<div class="wrapper">
-		<nav class="writeup__nav">
-			<a class="return">&larr; Week {{ page.week }}</a>
-		</nav>	
-
-		<section class="writeup__content">
-			{{ content }}
-		</section>
-	</div>
-</body>
-</html>
+---
+layout: default
+---
+<div class="writeup">
+	<nav class="writeup__nav">
+		<a href="./">&larr; Week {{ page.week }} Overview</a>
+	</nav>	
+	
+	<section class="writeup__content">
+		<h1>Assignment {{ page.week }}: {{ page.title }}</h1>
+		{{ content }}
+	</section>
+</div>

@@ -3,15 +3,7 @@
 ---
 @charset "utf-8";
 
-// Sanitize.css variables
-$root-font-family: "Crimson Text", sans-serif;
-$root-line-height: 1.6;
-$root-font-size: 18px;
-$root-background-color: #f8f8f8;
-$root-color: #333;
-
-// The responsive stuff
-$break-screen: min-width 60rem;
+@import '../_sass/variables';
 
 @import '../bower_components/compass-breakpoint/stylesheets/breakpoint';
 @import '../bower_components/susy/sass/susy';
@@ -25,6 +17,8 @@ $break-screen: min-width 60rem;
 @import '../_sass/typography/headers';
 
 @import '../_sass/modules/tree';
+@import '../_sass/modules/warning';
+
 @import '../_sass/modules/writeup';
 @import '../_sass/modules/sidenote';
 

@@ -1,20 +1,19 @@
 ---
 layout: writeup
+title: The Super-Safe Linear Color-Gradient-a-rizer
 ---
 
-# Assignment {{ page.week }}: The Super-Safe Linear Color-Gradient-a-rizer
-{:.no_toc}
+## The idea
 
 * This is a TOC
 {:toc}
-
-## The idea
 
 In this assignment, you will create an indicator light for a **potentiometer** (a "knob" in normal-person speak, or a **pot** in engineer speak). This is, as you might expect, a very common application of simple microprocessing, and you might see indicator lights controlled by tiny computers anywhere from your car to the little blinking sleep light on your laptop.
 
 Your indicator light will be an RGB LED that scales between two colors and then blinks red when a pot is turned up too high.
 
 By the end of this assignment, you should know how to wire up circuits that produce continuous ("analog") values, read these values into your Arduino, and simulate analog output from your Arduino using Pulse-Width Modulation (PWM). Let's go!
+
 
 ## The background
 

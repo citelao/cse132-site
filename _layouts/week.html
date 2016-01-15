@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="week">
+	<ul>
+		{% for week in site.weeks limit:20 %}  
+		<li>  
+		<span>{{ week.date | date_to_string }}</span> &raquo;  
+		<a href="{{ BASE_PATH }}{{ week.url }}">  
+		{{ week.title }}</a>  
+			</li>  
+			{% endfor %}  
+		</ul>
+		{{ content }}
+	</div>

@@ -2,7 +2,7 @@
 layout: writeup
 ---
 
-# Studio 1: The Arduino
+# Studio {{ page.week }}: The Arduino
 {:.no_toc}
 
 ## Introduction to Arduino
@@ -46,7 +46,7 @@ Onward!
 
 ## Setting up Arduino
 
-<aside>
+<aside class="warning">
 If you wish to use your own laptop for development, you'll find the Arduino IDE [on the official site](https://www.arduino.cc/en/Main/Software), for Windows, Linux, and Mac.
 
 This software is already installed on the lab machines, so if you have *any* trouble with the installation process, finish the studio excercises on the lab computers, and *then* ask for help with the installation.
@@ -146,6 +146,13 @@ But stuff goes wrong. A lot. Here's how to troubleshoot your upload.
 - **Are you writing to the correct port?** Look under `Tools>Port>` and select a different one. On Windows it will be something like `COM3`. On Mac, it will be something like `/dev/cu.usbmodem1492`. There's no good way to find the correct one aside from guess-and-check.
 - **Restart Arduino and plug everything in again**. It works a lot of the time.
 </aside>
+
+<figure class="sidenote">
+![test](http://placehold.it/500x500)
+<figcaption>
+Test
+</figcaption>
+</figure>
 
 1. Click the **Upload** button to *compile* `helloworld` and *upload* it to the Arduino (the **Verify** button just compiles your program, looking for errors in code).
 2.	Make sure the code uploaded correctly (the **status message** should say `Done uploading.`).

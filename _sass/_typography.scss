@@ -2,6 +2,14 @@
  * Typography
  */
 
+a {
+	color: $link-color;
+
+	&:hover {
+		color: darken($link-color, 20%);
+	}
+}
+
 h1,
 h2,
 h3,
@@ -55,7 +63,7 @@ code {
 	font-family: 'Source Code Pro', 'Courier New', monospace;
 	font-size: 0.9em;
 
-	background: rgba(39, 40, 34, 0.1);
+	background: rgba(33, 38, 39, 0.1);
 	padding: 0.15em 0.15em;
 }
 
