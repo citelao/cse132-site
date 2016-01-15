@@ -1,0 +1,64 @@
+/**
+ * Outline headers
+ */
+
+body {
+	counter-reset: h2;
+}
+
+h2 {
+	counter-reset: h3;
+}
+
+h3 {
+	counter-reset: h4;
+}
+
+h4 {
+	counter-reset: h5;
+}
+
+h5 {
+	counter-reset: h6;
+}
+
+h2:before {
+	counter-increment: h2; 
+	content: counter(h2) " ";
+}
+
+h3:before {
+	counter-increment: h3; 
+	content: counter(h2) "." counter(h3) " ";
+}
+
+h4:before {
+	counter-increment: h4; 
+	content: counter(h2) "." counter(h3) "." counter(h4) " ";
+}
+
+h5:before {
+	counter-increment: h5;
+	content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) " ";
+}
+
+h6:before {
+	counter-increment: h6;
+	content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) " ";
+}
+
+aside h1:before,
+aside h2:before,
+aside h3:before,
+aside h4:before,
+aside h5:before,
+aside h6:before,
+h1.nocount:before,
+h2.nocount:before,
+h3.nocount:before,
+h4.nocount:before,
+h5.nocount:before,
+h6.nocount:before {
+	content: "";
+	counter-increment: none;
+}

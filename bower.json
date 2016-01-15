@@ -1,0 +1,23 @@
+{
+  "name": "cse132 site",
+  "authors": [
+    "Ben <ben@stolovitz.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "proprietary",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sanitize-css": "~3.0.0",
+    "susy": "~2.2.10"
+  }
+}

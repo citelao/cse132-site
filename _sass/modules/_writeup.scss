@@ -1,0 +1,8 @@
+.writeup__nav {
+	@include span(2 of 12);
+	text-align: right;
+}
+
+.writeup__content {
+	@include span(6 of 12);
+}

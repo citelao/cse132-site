@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body class="writeup">
+	<div class="wrapper">
+		<nav class="writeup__nav">
+			<a class="return">&larr; Week {{ page.week }}</a>
+
+			<section class="test">
+				<ol class="toc">
+					<li>test</li>
+					<li>test</li>
+				</ol>
+			</section>
+		</nav>	
+
+		<section class="writeup__content">
+			{{ content }}
+		</section>
+	</div>
+</body>
+</html>
