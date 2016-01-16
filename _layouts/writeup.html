@@ -1,13 +1,12 @@
 ---
 layout: default
 ---
-<div class="writeup">
-	<nav class="writeup__nav">
-		<a href="./">&larr; Week {{ page.week }} Overview</a>
-	</nav>	
-	
-	<section class="writeup__content">
-		<h1>{{ page.type | capitalize}} {{ page.week }}: {{ page.title }}</h1>
-		{{ content }}
-	</section>
-</div>
+
+<nav class="site-nav">
+	<a href="./">&larr; Week {{ page.week }} Overview</a>
+</nav>
+
+<article class="site-content">
+	<h1>{{ page.type | capitalize}} {{ page.week }}: {{ page.title }}</h1>
+	{{ content }}
+</article>

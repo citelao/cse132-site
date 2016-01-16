@@ -1,0 +1,19 @@
+.nav-list {
+	ol, ul {
+		padding-left: 0;
+	}
+}
+
+.nav-list__header {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 1.5rem;
+}
+
+.nav-list__item {
+	font-weight: normal;
+}
+
+.nav-list__item--current {
+	font-weight: bold;
+}

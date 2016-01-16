@@ -52,6 +52,5 @@ defaults:
 - scope:
     path: ""
     type: guides
-    type: guide
   values:
-    layout: writeup
+    layout: page

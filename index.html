@@ -2,4 +2,38 @@
 layout: default
 ---
 
-<h1>test</h1>
+{% include nav.html %}
+
+<section>
+<h1 class="nocount">CSE132 FL2016: Introduction to Computer Engineering</h1>
+<p>(Description of course)</p>
+</section>
+
+<section class="motd">
+	<h2 class="nocount">Message of the Day</h2>
+	<ul class="motd__list">
+		<li class="motd__item motd__item--primary">Here is a message of the day!</li>
+		<li class="motd__item">Here is an older one.</li>
+	</ul>
+</section>
+
+<section class="weeks">
+	<h2 class="nocount">Calendar</h2>
+	<ul class="block-list">
+		<li>
+			<h3 class="nocount">Week One: Introduction to Arduino</h3>
+			<p>Description of the week</p>
+			<ul>
+				<li>
+					<a href="">Studio</a>
+				</li>
+				<li>
+					<a href="">Assignment</a>
+				</li>
+				<li>
+					<a href="">Guide to X</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</section>

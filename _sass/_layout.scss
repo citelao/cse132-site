@@ -14,3 +14,35 @@ $susy: (
 .wrapper {
 	@include container;
 }
+
+.container {
+  display: flex;
+  align-items: baseline;
+}
+
+.site-nav {
+  @include span(10 of 12);
+  @include pre(1);
+
+  margin-top: 1.5rem;
+
+  @include breakpoint($break-screen) {
+    @include span(2 of 12);
+    @include pre(0);  
+  }
+}
+
+.site-content {
+  @include span(10 of 12);
+  @include pre(1);
+
+  @include breakpoint($break-screen) {
+    @include span(6 of 12);
+    @include pre(0);
+  }
+}
+
+.site-footer {
+  @include span(4);
+  @include pre(8); 
+}
