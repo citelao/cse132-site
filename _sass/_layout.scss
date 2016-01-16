@@ -19,8 +19,31 @@ $susy: (
   @include breakpoint($break-screen) {
     display: flex;
     align-items: baseline;
+    @include span(12 nest);
   }
 }
+
+.site-header {
+  @include span(10 of 12);
+  @include pre(1);
+
+  // margin-top: 1.5rem;
+  margin-bottom: -1.5rem;
+
+  @include breakpoint($break-screen) {
+    @include span(6);
+    @include pre(2);
+    @include post(4); 
+  }
+}
+
+  .site-header--narrow {
+    @include breakpoint($break-screen) {
+      @include span(4);
+      @include pre(2);
+      @include post(6); 
+    } 
+  }
 
 .site-nav {
   @include span(10 of 12);
@@ -45,7 +68,7 @@ $susy: (
 }
   
   /* used on index */
-  .site-third-pane {
+  .site-mission {
     @include span(10 of 12);
     @include pre(1);
 
@@ -55,14 +78,24 @@ $susy: (
     } 
   }
 
-  .site-half-pane {
+  .motd {
     @include span(10 of 12);
     @include pre(1);
 
     @include breakpoint($break-screen) {
-      @include span(6 of 12);
+      @include span(3 of 12);
       @include pre(0);
-    } 
+    }
+  }
+
+  .weeks-overview {
+    @include span(10 of 12);
+    @include pre(1);
+
+    @include breakpoint($break-screen) {
+      @include span(3 of 12);
+      @include pre(0);
+    }
   }
 
 .site-footer {

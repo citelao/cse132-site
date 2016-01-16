@@ -1,0 +1,50 @@
+.button {
+	display: inline-block;
+
+	background: $button-background-color;
+	color: $button-color;
+
+	text-align: middle;
+	font-family: 'Work Sans', sans-serif;
+
+	padding: 0.5rem;
+	margin: 0.5rem 0;
+
+	&:hover {
+		background: lighten($button-background-color, 10%);
+		color: $button-color;
+		text-decoration: none;
+	}
+
+	&:active {
+		background: darken($button-background-color, 10%);
+	}
+}
+
+	.button--primary {
+		background: $primary-button-background-color;
+		color: $primary-button-color;
+
+		&:hover {
+			background: lighten($primary-button-background-color, 10%);
+			color: $primary-button-color;
+		}
+
+		&:active {
+			background: darken($primary-button-background-color, 10%);
+		}
+	}
+
+	.button--alt {
+		background: $alt-button-background-color;
+		color: $alt-button-color;
+
+		&:hover {
+			background: lighten($alt-button-background-color, 10%);
+			color: $alt-button-color;
+		}
+
+		&:active {
+			background: darken($alt-button-background-color, 10%);
+		}
+	}

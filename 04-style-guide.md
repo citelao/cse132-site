@@ -1,6 +1,7 @@
 ---
 title: Style Guide
 author: Ron Cytron, Josh Gelbard, and Ben Stolovitz
+permalink: style-guide/
 ---
 
 Getting the _computer_ to understand your program is no guarantee that _people_ will be able to follow it. Just as you would edit an English composition, you should spend time revising a computer program to make it elegant and readable. The following guidelines will help you write programs that are easy to read and modify. 

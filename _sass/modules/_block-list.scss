@@ -1,6 +1,13 @@
 .block-list {
 	list-style: none;
+	padding-left: 0;
 }
+
+	.block-list--inline {
+		.block-list__item {
+			display: inline-block;
+		}
+	}
 
 	// .block-list__item {
 	// 	border-bottom: 1px solid #bbb;

@@ -5,17 +5,17 @@ layout: default
 {% include nav.html %}
 
 <section class="site-content">
-	<h1 class="week__title">Week {{ page.week }}: {{ page.title }}</h1>
+	<h1>Week {{ page.week }}: {{ page.title }}</h1>
 
-	<section class="week__abstract">{{ content }}</section>
+	<section>{{ content }}</section>
 
-	<ul class="week__items">
+	<ul class="block-list">
 		{% for studio in site.studios limit:20 %}
 			{% assign sweek = studio.week | downcase %}
 			{% assign pweek = page.week | downcase %}
 			{% if sweek == pweek %}
-			<li>  
-			<a href="{{ BASE_PATH }}{{ studio.url }}">
+			<li class="block-list__item">
+			<a href="{{ BASE_PATH }}{{ studio.url }}" class="button button--alt">
 			Studio
 			&raquo;
 			{{ studio.title }}</a>
@@ -27,8 +27,8 @@ layout: default
 			{% assign aweek = assignment.week | downcase %}
 			{% assign pweek = page.week | downcase %}
 			{% if aweek == pweek %}
-			<li>
-			<a href="{{ BASE_PATH }}{{ assignment.url }}">
+			<li class="block-list__item">
+			<a href="{{ BASE_PATH }}{{ assignment.url }}" class="button button--primary">
 			Assignment
 			&raquo;
 			{{ assignment.title }}</a>  
@@ -39,8 +39,8 @@ layout: default
 		{% for guide in site.guides limit:20 %}
 			{% assign pweek = page.week | downcase %}
 			{% if guide.week contains pweek %}
-			<li>
-			<a href="{{ BASE_PATH }}{{ guide.url }}">
+			<li class="block-list__item">
+			<a href="{{ BASE_PATH }}{{ guide.url }}" class="button">
 			Guide
 			&raquo;
 			{{ guide.title }}</a>  

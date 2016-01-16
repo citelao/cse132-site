@@ -1,6 +1,7 @@
 ---
 title: Policies
 author: Ron Cytron and Josh Gelbard
+permalink: policies/
 ---
 
 ##Grading Policy
