@@ -1,8 +1,8 @@
 ---
-layout: writeup
 title: The Super-Safe Linear Color-Gradient-a-rizer
 author: Ben Stolovitz
 week: 2
+permalink: weeks/2/assignment
 ---
 
 ## The idea

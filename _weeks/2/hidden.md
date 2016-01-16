@@ -1,5 +1,0 @@
----
-output: false
----
-
-moo?

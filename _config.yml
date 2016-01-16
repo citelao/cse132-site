@@ -47,3 +47,8 @@ defaults:
   values:
     week: na
     layout: writeup
+- scope:
+    path: ""
+    type: guides
+  values:
+    layout: writeup

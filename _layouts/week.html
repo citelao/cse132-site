@@ -13,10 +13,10 @@ layout: default
 			{% assign pweek = page.week | downcase %}
 			{% if sweek == pweek %}
 			<li>  
-			<a href="{{ BASE_PATH }}{{ studio.url }}">  
+			<a href="{{ BASE_PATH }}{{ studio.url }}">
 			Studio
 			&raquo;
-			{{ studio.title }}</a>  
+			{{ studio.title }}</a>
 				</li>
 			{% endif %}
 		{% endfor %}
@@ -26,12 +26,24 @@ layout: default
 			{% assign pweek = page.week | downcase %}
 			{% if aweek == pweek %}
 			<li>
-			<a href="{{ BASE_PATH }}{{ assignment.url }}">  
+			<a href="{{ BASE_PATH }}{{ assignment.url }}">
 			Assignment
 			&raquo;
 			{{ assignment.title }}</a>  
 				</li>
 			{% endif %}
-		{% endfor %}  
+		{% endfor %}
+
+		{% for guide in site.guides limit:20 %}
+			{% assign pweek = page.week | downcase %}
+			{% if guide.week contains pweek %}
+			<li>
+			<a href="{{ BASE_PATH }}{{ guide.url }}">
+			Guide
+			&raquo;
+			{{ guide.title }}</a>  
+				</li>
+			{% endif %}
+		{% endfor %}
 	</ul>
 </div>

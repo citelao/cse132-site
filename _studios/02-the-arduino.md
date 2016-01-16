@@ -1,6 +1,8 @@
 ---
-week: 2
 title: Introduction to Arduino
+author: Ben Stolovitz
+week: 2
+permalink: weeks/2/studio
 ---
 
 * This will be a TOC
