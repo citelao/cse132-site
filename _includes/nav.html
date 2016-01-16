@@ -40,7 +40,13 @@
 	</li>
 	<li class="nav-list__header">Reference
 		<ol>
-			<li class="nav-list__item">TODO resources</li>
+			{% for resource in site.data.resources limit:20 %}
+			<li class="nav-list__item">
+				<a href="{{ resource.url }}" target="blank">
+					{{ resource.title }}
+				</a>
+			</li>
+			{% endfor %}
 		</ol>
 	</li>
 	{% for node in site.pages limit:20 %}
