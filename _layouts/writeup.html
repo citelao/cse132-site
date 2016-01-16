@@ -1,12 +1,22 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
 
-<nav class="site-nav">
-	<a href="../">&larr; Week {{ page.week }} Overview</a>
-</nav>
+{% include head.html %}
 
-<article class="site-content">
-	<h1>{{ page.type | capitalize}} {{ page.week }}: {{ page.title }}</h1>
-	{{ content }}
-</article>
+<body>
+	<div class="wrapper">
+			<div class="container">
+				<nav class="site-nav">
+					<a href="../">&larr; Week {{ page.week }} Overview</a>
+				</nav>
+
+				<article class="site-content">
+					<h1>{{ page.type | capitalize}} {{ page.week }}: {{ page.title }}</h1>
+					{{ content }}
+				</article>
+			</div>
+
+			{% include footer.html %}
+	</div>
+</body>
+</html>

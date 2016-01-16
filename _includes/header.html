@@ -1,3 +1,9 @@
 <header class="site-header {{ page.header-class }}">
-	<h1>CSE132 SP2016: Introduction to Computer Engineering</h1>
+	{% if page.header == "text" %}
+		<h1>{{ page.header-text }}</h1>
+	{% elsif page.header == "week" %}
+		<h1>Week {{ page.week }}: {{ page.title }}</h1>
+	{% else %}
+		<h1>{{ page.title }}</h1>
+	{% endif %}
 </header>

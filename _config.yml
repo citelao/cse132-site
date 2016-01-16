@@ -41,6 +41,7 @@ defaults:
   values:
     week: na
     layout: week
+    header: week
     permalink: weeks/:week/
 - scope:
     path: ""
