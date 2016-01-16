@@ -41,14 +41,17 @@ defaults:
   values:
     week: na
     layout: writeup
+    type: studio
 - scope:
     path: ""
     type: assignments
   values:
     week: na
     layout: writeup
+    type: assignment
 - scope:
     path: ""
     type: guides
+    type: guide
   values:
     layout: writeup

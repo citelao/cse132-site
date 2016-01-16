@@ -5,6 +5,8 @@ week: 2
 permalink: weeks/2/studio
 ---
 
+## Introduction to Arduino
+
 * This will be a TOC
 {:toc}
 
