@@ -43,6 +43,27 @@ $susy: (
     @include pre(0);
   }
 }
+  
+  /* used on index */
+  .site-third-pane {
+    @include span(10 of 12);
+    @include pre(1);
+
+    @include breakpoint($break-screen) {
+      @include span(4 of 12);
+      @include pre(0);
+    } 
+  }
+
+  .site-half-pane {
+    @include span(10 of 12);
+    @include pre(1);
+
+    @include breakpoint($break-screen) {
+      @include span(6 of 12);
+      @include pre(0);
+    } 
+  }
 
 .site-footer {
   @include span(10 of 12);

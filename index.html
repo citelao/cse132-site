@@ -4,30 +4,38 @@ layout: default
 
 {% include nav.html %}
 
-<section>
-<h1>CSE132 SP2016: Introduction to Computer Engineering</h1>
-<p>(Description of course)</p>
-</section>
+<div class="site-third-pane">
+	<section class="site-mission">
+	<h1>CSE132 SP2016: Introduction to Computer Engineering</h1>
+	<p>
+		CSE 132 introduces students to fundamental concepts in the basic operation of computers, from microprocessors to servers, and explores the universal similarities between all modern computing problems: how do we represent data? How do we communicate with other computers? How do processors "think"?
+	</p>
+	<p>
+		We study inputs, outputs, and sensing; information representation; basic computer architecture and machine language; time-critical computation; intermachine communication; and protocol design.
+	</p>
+	<p>
+		Students use both desktop systems and handheld (Arduino-compatible) microcontrollers to design and implement solutions to laboratory problems. They also participate in active-learning sessions where they work with professors and their peers to solve problems collaboratively.
+	</p>
+	<p>Prerequisite: CSE 131 or equivalent.</p>
+	</section>
+	
+	<section class="motd">
+		<h2 class="nocount">Message of the Day</h2>
+		<ul class="block-list motd__list">
+		{% for motd in site.data.motds limit:20 %}
+			<li class="block-list__item motd__item">
+				{{ motd }}
+			</li>
+		{% endfor %}
+		</ul>
+	</section>
+</div>
 
-<section class="motd">
-	<h2 class="nocount">Message of the Day</h2>
-	<ul class="motd__list">
-		<li class="motd__item motd__item--primary">Here is a message of the day!</li>
-		<li class="motd__item">Here is an older one.</li>
-	</ul>
-</section>
-
-<section class="weeks">
+<section class="site-half-pane weeks-overview">
 	<h2 class="nocount">Calendar</h2>
 	<ul class="block-list">
 		<li>
 			<h3 class="nocount">Week One: Introduction to Arduino</h3>
-			<p>Description of the week</p>
-			<p>
-				TODO: finish the individualized week preview first.
-				Then we can basically copy-paste it here.
-			</p>
-			<p>Specifically, I want to style the list of attached files. Maybe buttons or something pretty.</p>
 			<ul>
 				<li>
 					<a href="">Studio</a>
