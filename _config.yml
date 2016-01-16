@@ -41,7 +41,7 @@ defaults:
   values:
     week: na
     layout: week
-    permalink: weeks/:week/index
+    permalink: weeks/:week/
 - scope:
     path: ""
     type: studios
@@ -49,7 +49,7 @@ defaults:
     week: na
     layout: writeup
     type: studio
-    permalink: weeks/:week/studio
+    permalink: weeks/:week/studio/
 - scope:
     path: ""
     type: assignments
@@ -57,7 +57,7 @@ defaults:
     week: na
     layout: writeup
     type: assignment
-    permalink: weeks/:week/assignment
+    permalink: weeks/:week/assignment/
 - scope:
     path: ""
     type: guides

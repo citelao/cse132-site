@@ -11,7 +11,7 @@ module Jekyll
 
         def generate(site)
         	collections_docs = site.collections.values.map { |e| e.docs }.flatten
-        	items = (site.posts.docs + collections_docs)
+        	items = (site.posts.docs + collections_docs + site.pages)
             items.each do |item|
                 item.data["permalink"] = generate_permalink(item)
             end
@@ -31,8 +31,10 @@ module Jekyll
                 [r.to_sym, item.data[r].to_s]
             }.compact.to_h
 
+            template = (item.respond_to? :url_template) ? item.url_template : item.template
+
             URL.new({
-                :template => item.url_template,
+                :template => template,
                 :placeholders => replacements,
                 :permalink => item.permalink
             }).to_s
