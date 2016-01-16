@@ -37,7 +37,7 @@ $susy: (
   @include pre(1);
 
   @include breakpoint($break-screen) {
-    @include span(6 of 12);
+    @include span(6 of 12 nest);
     @include pre(0);
   }
 }

@@ -1,15 +1,9 @@
-/**
- * Block-level elements
- */
-
 #markdown-toc {
 	font-size: 80%;
 
 	@include breakpoint($break-screen) {
-		float: left;
-		margin-left: 0 - span(2 of 6) - gutter(6);
-		width: span(2 of 6);
-		padding-left: 0; 
+		@include span(2 of 6);
+		margin-left: 0 - span(2 of 6 wide);
 		top: 0;
 	}
 }
