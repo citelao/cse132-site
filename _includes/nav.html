@@ -17,7 +17,7 @@
 			<li class="nav-list__item">
 			{% endif %}
 				<a href="{{ BASE_PATH }}{{ week.url }}">
-					Week {{ week.week }}
+					{{ week.week }}: {{ week.title }}
 				</a>
 			</li>
 			{% endfor %}
