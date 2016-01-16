@@ -13,16 +13,29 @@ module Jekyll
         	collections_docs = site.collections.values.map { |e| e.docs }.flatten
         	items = (site.posts.docs + collections_docs)
             items.each do |item|
-                parser(item)
+                item.data["permalink"] = generate_permalink(item)
             end
         end
 
-        def parser(item)
-        	# p item.data
-        	# return unless item.data["permalink"]
+        def generate_permalink(item)
+        	return unless item.data["permalink"]
 
-        	# p item.data["permalink"]
-            # TODO
+            replacement_keys = item["permalink"].scan(/:\w+/).map { |s| s.slice(1..-1) }
+
+            return item.data["permalink"] unless replacement_keys.length > 0
+
+            replacements = replacement_keys.map { |r|
+                next if item.url_placeholders.keys.include? r.to_sym
+                next if r == "permalink" # haha don't try that.
+
+                [r.to_sym, item.data[r].to_s]
+            }.compact.to_h
+
+            URL.new({
+                :template => item.url_template,
+                :placeholders => replacements,
+                :permalink => item.permalink
+            }).to_s
         end
     end
 end

@@ -34,13 +34,14 @@ defaults:
     path: ""
   values:
     author: "(unknown)"
-    layout: default
+    layout: page
 - scope:
     path: ""
-    type: week
+    type: weeks
   values:
     week: na
     layout: week
+    permalink: weeks/:week/index
 - scope:
     path: ""
     type: studios
@@ -48,6 +49,7 @@ defaults:
     week: na
     layout: writeup
     type: studio
+    permalink: weeks/:week/studio
 - scope:
     path: ""
     type: assignments
@@ -55,6 +57,7 @@ defaults:
     week: na
     layout: writeup
     type: assignment
+    permalink: weeks/:week/assignment
 - scope:
     path: ""
     type: guides
