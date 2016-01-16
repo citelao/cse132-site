@@ -11,12 +11,12 @@
 	<li class="nav-list__header">Weeks
 		<ol>
 			{% for week in site.weeks limit:20 %}
-			<li>
-				{% if page.url == week.url %}
-				<a href="{{ BASE_PATH }}{{ week.url }}" class="nav-list__item nav-list__item--current">
-				{% else %}
-				<a href="{{ BASE_PATH }}{{ week.url }}" class="nav-list__item">
-				{% endif %}
+			{% if page.url == week.url %}
+			<li class="nav-list__item nav-list__item--current">
+			{% else %}
+			<li class="nav-list__item">
+			{% endif %}
+				<a href="{{ BASE_PATH }}{{ week.url }}">
 					Week {{ week.week }}
 				</a>
 			</li>
@@ -26,19 +26,33 @@
 	<li class="nav-list__header">Guides
 		<ol>
 			{% for guide in site.guides limit:20 %}
-			<li>
-				{% if page.url == guide.url %}
-				<a href="{{ BASE_PATH }}{{ guide.url }}" class="nav-list__item nav-list__item--current">
-				{% else %}
-				<a href="{{ BASE_PATH }}{{ guide.url }}" class="nav-list__item">
-				{% endif %}
+			{% if page.url == guide.url %}
+			<li class="nav-list__item nav-list__item--current">
+			{% else %}
+			<li class="nav-list__item">
+			{% endif %}
+				<a href="{{ BASE_PATH }}{{ guide.url }}">
 					{{ guide.title }}
 				</a>
 			</li>
 			{% endfor %}
 		</ol>
 	</li>
-	<li class="nav-list__header">Reference</li>
-	<li class="nav-list__header">Policies</li>
+	<li class="nav-list__header">Reference
+		<ol>
+			<li class="nav-list__item">TODO resources</li>
+		</ol>
+	</li>
+	{% for node in site.pages limit:20 %}
+		{% if page.url == node.url %}
+		<li class="nav-list__item nav-list__item--current">
+		{% else %}
+		<li class="nav-list__item">
+		{% endif %}
+			<a href="{{ BASE_PATH }}{{ node.url }}">
+				{{ node.title }}
+			</a>
+		</li>
+	{% endfor %}
 </ul>
 </nav>

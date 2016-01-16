@@ -1,47 +1,51 @@
 ---
-layout: page
+layout: default
 ---
 
-<h1 class="week__title">Week {{ page.week }}: {{ page.title }}</h1>
+{% include nav.html %}
 
-<section class="week__abstract">{{ content }}</section>
+<section class="site-content">
+	<h1 class="week__title">Week {{ page.week }}: {{ page.title }}</h1>
 
-<ul class="week__items">
-	{% for studio in site.studios limit:20 %}
-		{% assign sweek = studio.week | downcase %}
-		{% assign pweek = page.week | downcase %}
-		{% if sweek == pweek %}
-		<li>  
-		<a href="{{ BASE_PATH }}{{ studio.url }}">
-		Studio
-		&raquo;
-		{{ studio.title }}</a>
-			</li>
-		{% endif %}
-	{% endfor %}
+	<section class="week__abstract">{{ content }}</section>
 
-	{% for assignment in site.assignments limit:20 %}
-		{% assign aweek = assignment.week | downcase %}
-		{% assign pweek = page.week | downcase %}
-		{% if aweek == pweek %}
-		<li>
-		<a href="{{ BASE_PATH }}{{ assignment.url }}">
-		Assignment
-		&raquo;
-		{{ assignment.title }}</a>  
-			</li>
-		{% endif %}
-	{% endfor %}
+	<ul class="week__items">
+		{% for studio in site.studios limit:20 %}
+			{% assign sweek = studio.week | downcase %}
+			{% assign pweek = page.week | downcase %}
+			{% if sweek == pweek %}
+			<li>  
+			<a href="{{ BASE_PATH }}{{ studio.url }}">
+			Studio
+			&raquo;
+			{{ studio.title }}</a>
+				</li>
+			{% endif %}
+		{% endfor %}
 
-	{% for guide in site.guides limit:20 %}
-		{% assign pweek = page.week | downcase %}
-		{% if guide.week contains pweek %}
-		<li>
-		<a href="{{ BASE_PATH }}{{ guide.url }}">
-		Guide
-		&raquo;
-		{{ guide.title }}</a>  
-			</li>
-		{% endif %}
-	{% endfor %}
-</ul>
+		{% for assignment in site.assignments limit:20 %}
+			{% assign aweek = assignment.week | downcase %}
+			{% assign pweek = page.week | downcase %}
+			{% if aweek == pweek %}
+			<li>
+			<a href="{{ BASE_PATH }}{{ assignment.url }}">
+			Assignment
+			&raquo;
+			{{ assignment.title }}</a>  
+				</li>
+			{% endif %}
+		{% endfor %}
+
+		{% for guide in site.guides limit:20 %}
+			{% assign pweek = page.week | downcase %}
+			{% if guide.week contains pweek %}
+			<li>
+			<a href="{{ BASE_PATH }}{{ guide.url }}">
+			Guide
+			&raquo;
+			{{ guide.title }}</a>  
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+</section>
