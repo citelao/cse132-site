@@ -6,8 +6,8 @@
 	padding: 0 0 1.5rem 1.5rem;
 
 	@include breakpoint($break-screen) {
-		@include span(4 of 6 wide);
-		margin: 0 (0 - span(4 of 6 wider)) gutter(6) gutter(6);
+		@include span(4 of 6);
+		margin: 0 (0 - span(4 of 6)) gutter(6) gutter(6);
 		padding-left: gutter(4);
 
 		float: right;

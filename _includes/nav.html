@@ -2,12 +2,29 @@
 <ul class="nav-list">
 	<li>
 		{% if page.url == "/" %}
-		<a href="{{ BASE_PATH }}/" class="nav-list__header nav-list__item nav-list__item--current">
+		<a href="{{ BASE_PATH }}/" class="nav-list__item nav-list__item--current">
 		{% else %}
-		<a href="{{ BASE_PATH }}/" class="nav-list__header nav-list__item">
+		<a href="{{ BASE_PATH }}/" class="nav-list__item">
 		{% endif %}
 		Home</a>
 	</li>
+
+	{% for node in site.pages limit:20 %}
+		{% if node.layout != "null" and node.url != "/" %}
+		{% if node.placement == "top" %}
+			{% if page.url == node.url %}
+			<li class="nav-list__header nav-list__item nav-list__item--current">
+			{% else %}
+			<li class="nav-list__header nav-list__item">
+			{% endif %}
+				<a href="{{ BASE_PATH }}{{ node.url }}">
+					{{ node.title }}
+				</a>
+			</li>
+		{% endif %}
+		{% endif %}
+	{% endfor %}
+
 	<li class="nav-list__header">Weeks
 		<ol>
 			{% for week in site.weeks limit:20 %}
@@ -50,15 +67,20 @@
 		</ol>
 	</li>
 	{% for node in site.pages limit:20 %}
-		{% if page.url == node.url %}
-		<li class="nav-list__item nav-list__item--current">
-		{% else %}
-		<li class="nav-list__item">
+		{% if node.layout != "null" and node.url != "/" %}
+		{% if node.placement != "top" %}
+			{% if page.url == node.url %}
+			<li class="nav-list__item nav-list__item--current">
+			{% else %}
+			<li class="nav-list__item">
+			{% endif %}
+			{{node.name}}
+				<a href="{{ BASE_PATH }}{{ node.url }}">
+					{{ node.title }}
+				</a>
+			</li>
 		{% endif %}
-			<a href="{{ BASE_PATH }}{{ node.url }}">
-				{{ node.title }}
-			</a>
-		</li>
+		{% endif %}
 	{% endfor %}
 </ul>
 </nav>

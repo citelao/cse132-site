@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Style Guide
 author: Ron Cytron, Josh Gelbard, and Ben Stolovitz
 ---

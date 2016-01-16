@@ -146,12 +146,7 @@ But stuff goes wrong. A lot. Here's how to troubleshoot your upload.
 - **Restart Arduino and plug everything in again**. It works a lot of the time.
 </aside>
 
-<figure class="sidenote">
 ![test](http://placehold.it/500x500)
-<figcaption>
-Test
-</figcaption>
-</figure>
 
 1. Click the **Upload** button to *compile* `helloworld` and *upload* it to the Arduino (the **Verify** button just compiles your program, looking for errors in code).
 2.	Make sure the code uploaded correctly (the **status message** should say `Done uploading.`).
