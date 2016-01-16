@@ -8,12 +8,30 @@ layout: default
 	<section class="week__abstract">{{ content }}</section>
 
 	<ul class="week__items">
-		{% for week in site.weeks limit:20 %}  
-		<li>  
-		<span>{{ week.date | date_to_string }}</span> &raquo;  
-		<a href="{{ BASE_PATH }}{{ week.url }}">  
-		{{ week.title }}</a>  
-			</li>  
+		{% for studio in site.studios limit:20 %}
+			{% assign sweek = studio.week | downcase %}
+			{% assign pweek = page.week | downcase %}
+			{% if sweek == pweek %}
+			<li>  
+			<a href="{{ BASE_PATH }}{{ studio.url }}">  
+			Studio
+			&raquo;
+			{{ studio.title }}</a>  
+				</li>
+			{% endif %}
+		{% endfor %}
+
+		{% for assignment in site.assignments limit:20 %}
+			{% assign aweek = assignment.week | downcase %}
+			{% assign pweek = page.week | downcase %}
+			{% if aweek == pweek %}
+			<li>
+			<a href="{{ BASE_PATH }}{{ assignment.url }}">  
+			Assignment
+			&raquo;
+			{{ assignment.title }}</a>  
+				</li>
+			{% endif %}
 		{% endfor %}  
 	</ul>
 </div>

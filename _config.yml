@@ -23,6 +23,7 @@ collections:
   weeks:
     output: true
   assignments:
+    output: true
   studios:
     output: true
   guides:
@@ -33,10 +34,16 @@ defaults:
     path: ""
   values:
     author: "(unknown)"
+    layout: default
 - scope:
     path: ""
     type: studios
   values:
     week: na
     layout: writeup
-    # permalink: /week/studio/:title
+- scope:
+    path: ""
+    type: assignments
+  values:
+    week: na
+    layout: writeup

@@ -1,12 +1,7 @@
 ---
-layout: writeup
+week: 2
 title: Introduction to Arduino
 ---
-
-# Studio {{ page.week }}: The Arduino
-{:.no_toc}
-
-## Introduction to Arduino
 
 * This will be a TOC
 {:toc}
