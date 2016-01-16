@@ -16,8 +16,10 @@ $susy: (
 }
 
 .container {
-  display: flex;
-  align-items: baseline;
+  @include breakpoint($break-screen) {
+    display: flex;
+    align-items: baseline;
+  }
 }
 
 .site-nav {
@@ -43,6 +45,11 @@ $susy: (
 }
 
 .site-footer {
-  @include span(4);
-  @include pre(8); 
+  @include span(10 of 12);
+  @include pre(1);
+
+  @include breakpoint($break-screen) {
+    @include span(4);
+    @include pre(8); 
+  }
 }

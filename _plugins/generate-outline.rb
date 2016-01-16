@@ -1,3 +1,6 @@
+##
+# Generate an array outline of a page from its headers.
+# Unimplemented, but will be helpful for writeup nav.
 module Outline
   class Generator < Jekyll::Generator
     def generate(site)

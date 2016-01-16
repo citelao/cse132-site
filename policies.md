@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Policies
+author: Ron Cytron and Josh Gelbard
 ---
 
 ##Grading Policy
