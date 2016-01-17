@@ -43,7 +43,7 @@ permalink: calendar/
 							</td>
 						{% endif %}
 						{% if day.date == "TBD" %}
-						<td class="calendar__item">{{ day.date }}</td>
+						<td class="calendar__item"><small>{{ day.date }}</small></td>
 						{% else %}
 						<td class="calendar__item">{{ day.date | date: "%a, %b %-d" }}</td>
 						{% endif %}
