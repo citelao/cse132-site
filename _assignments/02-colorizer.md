@@ -2,6 +2,8 @@
 title: The Super-Safe Linear Color-Gradient-a-rizer
 author: Ben Stolovitz
 week: 2
+assigned: 2016-02-03
+due: 2016-02-10
 ---
 
 ## The idea

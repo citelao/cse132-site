@@ -69,7 +69,7 @@ $susy: (
 
   .site-content--full {
     @include breakpoint($break-screen) {
-      @include span(10 of 12 nest);
+      @include span(10 of 12);
     }
   }
 
