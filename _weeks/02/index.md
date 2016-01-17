@@ -4,6 +4,8 @@ week: 2
 days:
 - date: 2016-02-01
   logistics: test
+  preparation: >
+    Read things in the book!
 - date: 2016-02-03
 ---
 

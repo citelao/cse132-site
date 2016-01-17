@@ -45,9 +45,11 @@ defaults:
     permalink: weeks/:week/
     days:
     - date: TBD
-      logistics: none
+      logistics:
+      preparation:
     - date: TBD
-      logistics: none
+      logistics: 
+      preparation:
 - scope:
     path: ""
     type: studios

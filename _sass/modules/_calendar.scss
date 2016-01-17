@@ -1,3 +1,7 @@
+.calendar {
+	width: 100%;
+}
+
 .calendar__head {
 	border-bottom: 1px solid #333;
 }
@@ -13,5 +17,14 @@
 }
 
 .calendar__item {
+	text-align: center;
 	padding: 0.2rem;
 }
+
+	.calendar__item--left {
+		text-align: left;
+	}
+
+	.calendar__item--right {
+		text-align: right;
+	}

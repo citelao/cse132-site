@@ -12,8 +12,8 @@ permalink: calendar/
 	<table class="calendar">
 		<thead class="calendar__head">
 			<tr>
-				<th class="calendar__colhead">#</th>
-				<th class="calendar__colhead">Module</th>
+				<th class="calendar__colhead calendar__item--right">#</th>
+				<th class="calendar__colhead calendar__item--left">Module</th>
 				<th class="calendar__colhead">Date</th>
 				<th class="calendar__colhead">Logistics</th>
 				<th class="calendar__colhead">Preparation</th>
@@ -23,8 +23,8 @@ permalink: calendar/
 		</thead>
 		<tfoot class="calendar__foot">
 			<tr>
-				<th class="calendar__colfoot">#</th>
-				<th class="calendar__colfoot">Module</th>
+				<th class="calendar__colfoot calendar__item--right">#</th>
+				<th class="calendar__colfoot calendar__item--left">Module</th>
 				<th class="calendar__colfoot">Date</th>
 				<th class="calendar__colfoot">Logistics</th>
 				<th class="calendar__colfoot">Preparation</th>
@@ -38,14 +38,18 @@ permalink: calendar/
 				{% for day in week.days %}
 					<tr class="calendar__row">
 						{% if counter == 0 %}
-							<td rowspan="{{ week.days | size }}" class="calendar__item">{{ week.week }}</td>
-							<td rowspan="{{ week.days | size }}" class="calendar__item">{{ week.title }}</td>
+							<td rowspan="{{ week.days | size }}" class="calendar__item calendar__item--right">{{ week.week }}</td>
+							<td rowspan="{{ week.days | size }}" class="calendar__item calendar__item--left">{{ week.title }}</td>
 						{% endif %}
+						{% if day.date == "TBD" %}
 						<td class="calendar__item">{{ day.date }}</td>
+						{% else %}
+						<td class="calendar__item">{{ day.date | date: "%a, %b %-d" }}</td>
+						{% endif %}
 						<td class="calendar__item">{{ day.logistics }}</td>
 						<td class="calendar__item">{{ day.preparation }}</td>
-						<td class="calendar__item">---</td>
-						<td class="calendar__item">---</td>
+						<td class="calendar__item">-</td>
+						<td class="calendar__item">-</td>
 					</tr>
 					{% assign counter = counter | plus: 1 %}
 					{% comment %} 
