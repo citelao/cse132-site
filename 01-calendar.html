@@ -34,10 +34,9 @@ permalink: calendar/
 		</tfoot>
 		<tbody>
 			{% for week in site.weeks %}
-				{% assign counter = 0 %}
 				{% for day in week.days %}
 					<tr class="calendar__row">
-						{% if counter == 0 %}
+						{% if forloop.first %}
 							<td rowspan="{{ week.days | size }}" class="calendar__item calendar__item--right">{{ week.week }}</td>
 							<td rowspan="{{ week.days | size }}" class="calendar__item calendar__item--left">
 								<a href="{{ week.url }}">{{ week.title }}</a>
@@ -75,11 +74,6 @@ permalink: calendar/
 							{% endfor %}
 						</td>
 					</tr>
-					{% assign counter = counter | plus: 1 %}
-					{% comment %} 
-						How is this even a sensible template language?
-						Like, this is infuriating.
-					{% endcomment %}
 				{% endfor %}
 			{% endfor %}
 		</tbody>

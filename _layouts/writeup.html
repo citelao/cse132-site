@@ -12,6 +12,15 @@
 
 				<article class="site-content">
 					<h1>{{ page.type | capitalize}} {{ page.week }}: {{ page.title }}</h1>
+
+					{% if page.due %} 
+					<aside class="sidenote">
+						<h2 class="nocount">Logistics</h2>
+						<p><strong>Assigned:</strong> {{ page.assigned | date: "%a, %b %-d" }}</p>
+						<p><strong>Due:</strong> {{ page.due | date: "%a, %b %-d" }}</p>
+					</aside>
+					{% endif %}
+
 					{{ content }}
 				</article>
 			</div>
