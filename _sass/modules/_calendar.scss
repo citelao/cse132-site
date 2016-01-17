@@ -1,0 +1,17 @@
+.calendar__head {
+	border-bottom: 1px solid #333;
+}
+
+.calendar__colhead {
+	padding: 0.2rem;
+}
+
+.calendar__row {
+	&:nth-child(odd) {
+		background: rgba(50, 50, 50, 0.1);
+	}
+}
+
+.calendar__item {
+	padding: 0.2rem;
+}

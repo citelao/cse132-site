@@ -6,4 +6,54 @@ permalink: calendar/
 
 {% include nav.html %}
 
-TODO Calendar
+<section class="site-content site-content--full">
+	<p>This is the course calendar. May change.</p>
+	
+	<table class="calendar">
+		<thead class="calendar__head">
+			<tr>
+				<th class="calendar__colhead">#</th>
+				<th class="calendar__colhead">Module</th>
+				<th class="calendar__colhead">Date</th>
+				<th class="calendar__colhead">Logistics</th>
+				<th class="calendar__colhead">Preparation</th>
+				<th class="calendar__colhead">Assigned</th>
+				<th class="calendar__colhead">Due</th>
+			</tr>
+		</thead>
+		<tfoot class="calendar__foot">
+			<tr>
+				<th class="calendar__colfoot">#</th>
+				<th class="calendar__colfoot">Module</th>
+				<th class="calendar__colfoot">Date</th>
+				<th class="calendar__colfoot">Logistics</th>
+				<th class="calendar__colfoot">Preparation</th>
+				<th class="calendar__colfoot">Assigned</th>
+				<th class="calendar__colfoot">Due</th>
+			</tr>
+		</tfoot>
+		<tbody>
+			{% for week in site.weeks %}
+				{% assign counter = 0 %}
+				{% for day in week.days %}
+					<tr class="calendar__row">
+						{% if counter == 0 %}
+							<td rowspan="{{ week.days | size }}" class="calendar__item">{{ week.week }}</td>
+							<td rowspan="{{ week.days | size }}" class="calendar__item">{{ week.title }}</td>
+						{% endif %}
+						<td class="calendar__item">{{ day.date }}</td>
+						<td class="calendar__item">{{ day.logistics }}</td>
+						<td class="calendar__item">{{ day.preparation }}</td>
+						<td class="calendar__item">---</td>
+						<td class="calendar__item">---</td>
+					</tr>
+					{% assign counter = counter | plus: 1 %}
+					{% comment %} 
+						How is this even a sensible template language?
+						Like, this is infuriating.
+					{% endcomment %}
+				{% endfor %}
+			{% endfor %}
+		</tbody>
+	</table>
+</section>

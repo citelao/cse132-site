@@ -1,6 +1,6 @@
 $susy: (
   columns: 12,
-  gutters: 1/4,
+  gutters: 1/3,
   gutter-position: split,
   container: 1190px,
   debug: (
@@ -66,37 +66,44 @@ $susy: (
     @include pre(0);
   }
 }
+
+  .site-content--full {
+    @include breakpoint($break-screen) {
+      @include span(10 of 12 nest);
+    }
+  }
+
   
-  /* used on index */
-  .site-mission {
-    @include span(10 of 12);
-    @include pre(1);
+/* used on index */
+.site-mission {
+  @include span(10 of 12);
+  @include pre(1);
 
-    @include breakpoint($break-screen) {
-      @include span(4 of 12);
-      @include pre(0);
-    } 
+  @include breakpoint($break-screen) {
+    @include span(4 of 12);
+    @include pre(0);
+  } 
+}
+
+.motd {
+  @include span(10 of 12);
+  @include pre(1);
+
+  @include breakpoint($break-screen) {
+    @include span(3 of 12);
+    @include pre(0);
   }
+}
 
-  .motd {
-    @include span(10 of 12);
-    @include pre(1);
+.weeks-overview {
+  @include span(10 of 12);
+  @include pre(1);
 
-    @include breakpoint($break-screen) {
-      @include span(3 of 12);
-      @include pre(0);
-    }
+  @include breakpoint($break-screen) {
+    @include span(3 of 12);
+    @include pre(0);
   }
-
-  .weeks-overview {
-    @include span(10 of 12);
-    @include pre(1);
-
-    @include breakpoint($break-screen) {
-      @include span(3 of 12);
-      @include pre(0);
-    }
-  }
+}
 
 .site-footer {
   @include span(10 of 12);

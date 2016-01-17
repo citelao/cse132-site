@@ -2,6 +2,8 @@
 title: Introduction to Arduino
 author: Ben Stolovitz
 week: 2
+assigned: 2016-02-01
+due: 2016-02-01
 ---
 
 ## Introduction to Arduino

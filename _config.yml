@@ -43,6 +43,11 @@ defaults:
     layout: week
     header: week
     permalink: weeks/:week/
+    days:
+    - date: TBD
+      logistics: none
+    - date: TBD
+      logistics: none
 - scope:
     path: ""
     type: studios
@@ -51,6 +56,8 @@ defaults:
     layout: writeup
     type: studio
     permalink: weeks/:week/studio/
+    assigned: TBD
+    due: TBD
 - scope:
     path: ""
     type: assignments
@@ -59,6 +66,8 @@ defaults:
     layout: writeup
     type: assignment
     permalink: weeks/:week/assignment/
+    assigned: TBD
+    due: TBD
 - scope:
     path: ""
     type: guides

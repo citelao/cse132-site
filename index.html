@@ -8,12 +8,13 @@ header-class: site-header--narrow
 {% include nav.html %}
 
 <section class="site-mission">
+	<h2 class="nocount">Class Information</h2>
 	<p>
 		CSE 132 introduces students to fundamental concepts in the basic operation of computers, from microprocessors to servers, and explores the universal similarities between all modern computing problems: how do we represent data? How do we communicate with other computers? How do processors "think"?
 	</p>
-	<!-- <p>
+	<p>
 		We study inputs, outputs, and sensing; information representation; basic computer architecture and machine language; time-critical computation; intermachine communication; and protocol design.
-	</p> -->
+	</p>
 	<p>
 		Students use both desktop systems and handheld (Arduino-compatible) microcontrollers to design and implement solutions to laboratory problems. They also participate in active-learning sessions where they work with professors and their peers to solve problems collaboratively.
 	</p>
@@ -34,8 +35,9 @@ header-class: site-header--narrow
 <section class="weeks-overview">
 	<h2 class="nocount">Calendar</h2>
 	<ul class="block-list">
+		{% for week in site.weeks limit:20 %}
 		<li>
-			<h3 class="nocount">Week One: Introduction to Arduino</h3>
+			<h3 class="nocount">Week {{ week.week }}: {{ week.title }}</h3>
 			<ul class="block-list block-list--inline">
 				<li class="block-list__item">
 					<a href="" class="button">Studio</a>
@@ -48,89 +50,6 @@ header-class: site-header--narrow
 				</li>
 			</ul>
 		</li>
-		<li>
-			<h3 class="nocount">Week One: Introduction to Arduino</h3>
-			<ul class="block-list block-list--inline">
-				<li class="block-list__item">
-					<a href="" class="button">Studio</a>
-				</li>
-				<li class="block-list__item">
-					<a href="" class="button">Assignment</a>
-				</li>
-				<li class="block-list__item">
-					<a href="" class="button">Guide to X</a>
-				</li>
-			</ul>
-		</li>
-		<li>
-			<h3 class="nocount">Week One: Introduction to Arduino</h3>
-			<ul class="block-list block-list--inline">
-				<li class="block-list__item">
-					<a href="" class="button">Studio</a>
-				</li>
-				<li class="block-list__item">
-					<a href="" class="button">Assignment</a>
-				</li>
-				<li class="block-list__item">
-					<a href="" class="button">Guide to X</a>
-				</li>
-			</ul>
-		</li>
-		<li>
-			<h3 class="nocount">Week One: Introduction to Arduino</h3>
-			<ul class="block-list block-list--inline">
-				<li class="block-list__item">
-					<a href="" class="button">Studio</a>
-				</li>
-				<li class="block-list__item">
-					<a href="" class="button">Assignment</a>
-				</li>
-				<li class="block-list__item">
-					<a href="" class="button">Guide to X</a>
-				</li>
-			</ul>
-		</li>
-		<li>
-			<h3 class="nocount">Week One: Introduction to Arduino</h3>
-			<ul class="block-list block-list--inline">
-				<li class="block-list__item">
-					<a href="" class="button">Studio</a>
-				</li>
-				<li class="block-list__item">
-					<a href="" class="button">Assignment</a>
-				</li>
-				<li class="block-list__item">
-					<a href="" class="button">Guide to X</a>
-				</li>
-			</ul>
-		</li>
-		<li>
-			<h3 class="nocount">Week One: Introduction to Arduino</h3>
-			<ul class="block-list block-list--inline">
-				<li class="block-list__item">
-					<a href="" class="button">Studio</a>
-				</li>
-				<li class="block-list__item">
-					<a href="" class="button">Assignment</a>
-				</li>
-				<li class="block-list__item">
-					<a href="" class="button">Guide to X</a>
-				</li>
-			</ul>
-		</li>
-		<li>
-			<h3 class="nocount">Week One: Introduction to Arduino</h3>
-			<ul class="block-list block-list--inline">
-				<li class="block-list__item">
-					<a href="" class="button">Studio</a>
-				</li>
-				<li class="block-list__item">
-					<a href="" class="button">Assignment</a>
-				</li>
-				<li class="block-list__item">
-					<a href="" class="button">Guide to X</a>
-				</li>
-			</ul>
-		</li>
+		{% endfor %}
 	</ul>
 </section>
