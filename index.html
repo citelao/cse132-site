@@ -32,24 +32,12 @@ header-class: site-header--narrow
 	</ul>
 </section>
 
-<section class="weeks-overview">
-	<h2 class="nocount">Calendar</h2>
-	<ul class="block-list">
-		{% for week in site.weeks limit:20 %}
-		<li>
-			<h3 class="nocount">Week {{ week.week }}: {{ week.title }}</h3>
-			<ul class="block-list block-list--inline">
-				<li class="block-list__item">
-					<a href="" class="button">Studio</a>
-				</li>
-				<li class="block-list__item">
-					<a href="" class="button">Assignment</a>
-				</li>
-				<li class="block-list__item">
-					<a href="" class="button">Guide to X</a>
-				</li>
-			</ul>
-		</li>
-		{% endfor %}
-	</ul>
+<section class="logistics">
+	<h2 class="nocount">Logistics</h2>
+	<p>
+		(info about lecture location)
+	</p>
+	<p>
+		(info about different lab locations)
+	</p>
 </section>

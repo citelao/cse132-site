@@ -78,96 +78,102 @@ Getting the _computer_ to understand your program is no guarantee that _people_ 
 			return false;
 		}
 
--  **Avoid duplicating code** by writing an appropriately named procedure and calling it where neeeded.
--  Follow standard formatting conventions.
+- **Avoid duplicating code** by writing an appropriately named procedure and calling it where neeeded.
+- Follow standard formatting conventions.
 
-	TODO format me.
+	<dl markdown="0">
+		<dt>Capitalization</dt>
+		<dd>
+			<dl>
+				<dt>variables and method names</dt>
+				<dd>
+					the first letter is lower case, with the first letter of each subsequent word capitalized  
+					for example, <code>int caloriesFromFat = 18;</code>
+				</dd>
+				<dt>class names</dt>
+				<dd>
+					the start of each word is capitalized  
+					for example, <code>public class DirectionVector {</code>
+				</dd>
+				<dt>constants</dt>
+				<dd>
+					the entire name is capitalized  
+					for example, <code>public static final double PUPIL_FRACTION = 4;</code>
+				</dd>
+			</dl>
+		</dd>
+		<dt>Indentation</dt>
+		<dd>
+			<dl>
+				<dt>braces</dt>
+				<dd>
+					the open brace <code>{</code> goes at the end of the line before the start of the code block.
+					<p>
+						the close brace goes on its own line, indented to match the beginning of the line containing the corresponding open brace (an exception is <code>else</code> which goes on the same line as the closing brace for the corresponding <code>if</code>, so the closing brace for the <code>if</code> doesn't appear on its own line)
+					</p>
+				</dd>
+				<dt>code inside braces</dt>
+				<dd>
+					indent one level for each level of curly braces (<code>{}</code>)
+				</dd>
+				<dt>code inside consequents</dt>
+				<dd>
+					use curly braces and indent one level for consequents in conditional statements (braces may be omitted if there is only one statement in a consequent, but some editors expect the braces in order to do automatic indentation properly)
+				</dd>
+				<dt>continued lines</dt>
+				<dd>
+					when a statement continues across two or more lines, indent the second and remaining lines an equal amount past the start of the first line of the statement. See the example.
 
-<dl>
-<dt>**Capitalization:**</dt>
-<dd>
-<dl>
-<dt>variables and method names</dt>
-<dd>the first letter is lower case, with the first letter of each subsequent word capitalized  
-for example, `int caloriesFromFat = 18;`</dd>
-<dt>class names</dt>
-<dd>the start of each word is capitalized  
-for example, `public class DirectionVector {`</dd>
-<dt>constants</dt>
-<dd>the entire name is capitalized  
-for example, `public static final double PUPIL_FRACTION = 4;`</dd>
-</dl>
-</dd>
-<dt>**Indentation:**</dt>
-<dd>
-<dl>
-<dt>braces</dt>
-<dd>the open brace `{` goes at the end of the line before the start of the code block. 
-the close brace goes on its own line, indented to match the beginning of the line containing the corresponding open brace (an exception is "else" which goes on the same line as the closing brace for the corresponding "if", so the closing brace for the "if" doesn't appear on its own line)</dd>
-<dt>code inside braces</dt>
-<dd>indent one level for each level of curly braces ({})</dd>
-<dt>code inside consequents</dt>
-<dd>use curly braces and indent one level for consequents in conditional statements (braces may be omitted if there is only one statement in a consequent, but some editors expect the braces in order to do automatic indentation properly)</dd>
-<dt>continued lines</dt>
-<dd>when a statement continues across two or more lines, indent the second and remaining lines an equal amount past the start of the first line of the statement. See the example.</dd>
-example:
-```
+					<pre>
+					<code>
 public static boolean withdraw (int amount) {
-   	if (balance < amount) {
-      	return false;
-  	} else {
-      	balance = balance - amount;
-      	System.out.println("Withdrawl of $" + 
-      			amount + " successful, leaving $" 
-      			+ balance + ".");
-      	return true;
-   	}
+	if (balance < amount) {
+		return false;
+	} else {
+		balance = balance - amount;
+		System.out.println("Withdrawl of $" + 
+		amount + " successful, leaving $" 
+		+ balance + ".");
+		return true;
+	}
 }
-```
+</code></pre>
 
-**TIP:** Eclipse will help correct your indentation. Select the section of the file you want to correct, and then choose "correct indentation" from the "source" menu.
-
-</dd>
-
-<dt>**Order of variables and methods within a class definition:**</dt>
-
-<dd>
-
-<dl>
-
-<dt>constants</dt>
-
-<dd>if you define any constants, they should go first, with public constants before private ones</dd>
-
-<dt>class variables (static variables)</dt>
-
-<dd>if you define any static variables, put them immediately after the constants, listing the public variables first</dd>
-
-<dt>instance variables</dt>
-
-<dd>should follow the class variables, with the public ones first</dd>
-
-<dt>constructors</dt>
-
-<dd>should precede all other methods</dd>
-
-<dt>public accessors</dt>
-
-<dd>should immediately follow the constructors</dd>
-
-<dt>other methods, public and private</dt>
-
-<dd>can be listed in any logical order, with related methods near each other</dd>
-
-<dt>the `toString` method</dt>
-
-<dd>should be last so people can find it quickly</dd>
-
-</dl>
-
-</dd>
-
-</dl>
+					<strong>Tip:</strong> Eclipse will help correct your indentation. Select the section of the file you want to correct, and then choose "correct indentation" from the "source" menu.
+				</dd>
+		</dd>
+		<dt>Order of variables and methods within a class definition</dt>
+		<dd>
+			<dl>
+				<dt>constants</dt>
+				<dd>
+					if you define any constants, they should go first, with public constants before private ones
+				</dd>
+				<dt>class variables (static variables)</dt>
+				<dd>
+					if you define any static variables, put them immediately after the constants, listing the public variables first
+				</dd>
+				<dt>instance variables</dt>
+				<dd>
+					should follow the class variables, with the public ones first
+				</dd>
+				<dt>constructors</dt>
+				<dd>
+					should precede all other methods
+				</dd>
+				<dt>public accessors</dt>
+				<dd>
+					should immediately follow the constructors
+				</dd>
+				<dt>other methods, public and private</dt>
+				<dd>
+					can be listed in any logical order, with related methods near each other
+				</dd>
+				<dt>the <code>toString</code> method</dt>
+				<dd>should be last so people can find it quickly</dd>
+			</dl>
+		</dd>
+	</dl>
 
 - **Use brief inline comments** whenever the meaning of the code is not immediately obvious. For example, inline comments can be useful to summarize cases in a conditional expression.
 
