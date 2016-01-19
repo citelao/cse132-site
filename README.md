@@ -2,7 +2,7 @@
 
 ## Install
 
-`gem install jekyll; bower install; jekyll build`
+`gem install jekyll; jekyll build`
 
 ## Notes
 
