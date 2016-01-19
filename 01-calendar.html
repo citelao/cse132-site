@@ -39,7 +39,7 @@ permalink: calendar/
 						{% if forloop.first %}
 							<td rowspan="{{ week.days | size }}" class="calendar__item calendar__item--right">{{ week.week }}</td>
 							<td rowspan="{{ week.days | size }}" class="calendar__item calendar__item--left">
-								<a href="{{ week.url }}">{{ week.title }}</a>
+								<a href="{{ site.baseurl }}{{ week.url }}">{{ week.title }}</a>
 							</td>
 						{% endif %}
 						{% if day.date == "TBD" %}
@@ -52,24 +52,24 @@ permalink: calendar/
 						<td class="calendar__item">
 							{% for studio in site.studios %}
 								{% if studio.assigned == day.date %}
-								<a href="{{ studio.url }}">Studio {{ studio.week }}</a>
+								<a href="{{ site.baseurl }}{{ studio.url }}">Studio {{ studio.week }}</a>
 								{% endif %}
 							{% endfor %}
 							{% for assignment in site.assignments %}
 								{% if assignment.assigned == day.date %}
-								<a href="{{ assignment.url }}">Assignment {{ assignment.week }}</a>
+								<a href="{{ site.baseurl }}{{ assignment.url }}">Assignment {{ assignment.week }}</a>
 								{% endif %}
 							{% endfor %}
 						</td>
 						<td class="calendar__item">
 							{% for studio in site.studios %}
 								{% if studio.due == day.date %}
-								<a href="{{ studio.url }}">Studio {{ studio.week }}</a>
+								<a href="{{ site.baseurl }}{{ studio.url }}">Studio {{ studio.week }}</a>
 								{% endif %}
 							{% endfor %}
 							{% for assignment in site.assignments %}
 								{% if assignment.due == day.date %}
-								<a href="{{ assignment.url }}">Assignment {{ assignment.week }}</a>
+								<a href="{{ site.baseurl }}{{ assignment.url }}">Assignment {{ assignment.week }}</a>
 								{% endif %}
 							{% endfor %}
 						</td>

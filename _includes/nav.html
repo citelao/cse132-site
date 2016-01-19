@@ -5,7 +5,7 @@
 	{% else %}
 	<li class="nav-list__item">
 	{% endif %}
-		<a href="{{ BASE_PATH }}/">
+		<a href="{{ site.baseurl }}/">
 			Home
 		</a>
 	</li>
@@ -19,7 +19,7 @@
 				{% else %}
 				<li class="nav-list__item">
 				{% endif %}
-					<a href="{{ BASE_PATH }}{{ node.url }}">
+					<a href="{{ site.baseurl }}{{ node.url }}">
 						{{ node.title }}
 					</a>
 				</li>
@@ -35,7 +35,7 @@
 			{% else %}
 			<li class="nav-list__item">
 			{% endif %}
-				<a href="{{ BASE_PATH }}{{ week.url }}">
+				<a href="{{ site.baseurl }}{{ week.url }}">
 					{{ week.week }}: {{ week.title }}
 				</a>
 			</li>
@@ -50,7 +50,7 @@
 			{% else %}
 			<li class="nav-list__item">
 			{% endif %}
-				<a href="{{ BASE_PATH }}{{ guide.url }}">
+				<a href="{{ site.baseurl }}{{ guide.url }}">
 					{{ guide.title }}
 				</a>
 			</li>

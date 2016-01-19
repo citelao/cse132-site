@@ -13,7 +13,7 @@ layout: default
 			{% assign pweek = page.week | downcase %}
 			{% if sweek == pweek %}
 			<li class="block-list__item">
-			<a href="{{ BASE_PATH }}{{ studio.url }}" class="button button--alt">
+			<a href="{{ site.baseurl }}{{ studio.url }}" class="button button--alt">
 			Studio
 			&raquo;
 			{{ studio.title }}</a>
@@ -26,7 +26,7 @@ layout: default
 			{% assign pweek = page.week | downcase %}
 			{% if aweek == pweek %}
 			<li class="block-list__item">
-			<a href="{{ BASE_PATH }}{{ assignment.url }}" class="button button--primary">
+			<a href="{{ site.baseurl }}{{ assignment.url }}" class="button button--primary">
 			Assignment
 			&raquo;
 			{{ assignment.title }}</a>  
@@ -38,7 +38,7 @@ layout: default
 			{% assign pweek = page.week | downcase %}
 			{% if guide.week contains pweek %}
 			<li class="block-list__item">
-			<a href="{{ BASE_PATH }}{{ guide.url }}" class="button">
+			<a href="{{ site.baseurl }}{{ guide.url }}" class="button">
 			Guide
 			&raquo;
 			{{ guide.title }}</a>  
