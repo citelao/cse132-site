@@ -33,7 +33,7 @@ Are you on **Mac**? We will connect to the WUSTL Linux systems just to make sure
 1. Open up Terminal.
 2. Connect to the Linux boxes WUSTL provides by typing `ssh YOURWUSTLUSERNAME@shell.cec.wustl.edu`.
 3. If asked, `yes`, you want to save the RSA key.
-4. Enter your computer account password and your WUSTL Key password, as prompted. The letters will not appear as you type.
+4. Enter your WUSTL Key password, as prompted. The letters will not appear as you type.
 5. When the connection opens, type `qlogin` and enter your password again when prompted[^whyq].
 6. Done.
 
@@ -68,6 +68,19 @@ Well, you got yourself a terminal window. You might want to get your bearings.
 The directory you are currently in will not do. We will be creating several files today, and we don't want to clutter the home directory.
 
 ### Breaking new ground
+
+<aside class="sidenote">
+#### More than you ever wanted to know about paths
+{:.no_toc}
+
+Paths should be familiar to you, if you've ever seen a URL (`http://ben.stolovitz.com/this/is/not/real.txt`) or navigated your file system. We presented two ways to represent these paths, these locations of files and folders on your computer: **absolute** and **relative**.
+
+You can probably intuit that a path is a series of folders separated in some way. In linux, this is by a forward slash (`/`). On Windows, it is usually a backslash (`\`). The path `Documents/johnnykaratesongs.txt`, therefore, indicates that the `jonnykaratesongs.txt` file is in the `Documents/` folder (where I wrote the trailing `/` to indicate that `Documents` is, in fact, a folder).
+
+This is a **relative** path, because it assumes you know the location of the `Documents/` folder. To avoid the chicken-and-egg problem (isn't *everything* relative?), a *relative* path relative to a certain **root directory**, the base directory of the file system, is considered an **absolute path**. This is typically represented as a simple slash: `/`.
+
+Then, the path `/Users/dwyera/Documents/johnnykaratesongs.txt` might be the absolute path for the same file mentioned above. Since `~` represents the absolute path to your home directory, any path that begins with one is also an absolute path: `~/Documents/jonnykaratesongs.txt`, if your home directory is `/Users/dwyera/`.
+</aside>
 
 Create a new directory, then browse to it!
 
@@ -177,7 +190,7 @@ You need to checkout your code into a local copy so you can make edits.
 1. In your home directory, create a directory to hold your SVN repos. I called mine `svn/` because I'm creative.
 2. Browse into that directory, and then type `svn checkout svn.seas.wustl.edu/repositories/WUSTLUSERNAME/cse132_sp16/`. You will need to add an additional `--username WUSTLUSERNAME` argument if you did not SSH with that username.
 3. Enter your WUSTL password when prompted. Do **not** save it unencrypted. That would be bad. The letters won't appear, as always.
-4. `cd` to the new SVN directory. It should have `arduino/` and `java/` folders.
+4. `cd` to the new SVN directory. It should have an `Arduino/` folder and some files prefixed with `.`.
 
 ### Move your code to a new home
 
