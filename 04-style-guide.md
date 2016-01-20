@@ -10,9 +10,8 @@ Getting the _computer_ to understand your program is no guarantee that _people_ 
 
 -  **Fill out** `cover-page.txt`.
 	
-	If you make any general assumptions regarding the problem to be solved or about the kinds of inputs your program will accept, be sure to these assumptions in a separate paragraph (labeled `ASSUMPTIONS:`) at the bottom of the cover page. Specific assumptions regarding a particular method should be stated in the header comment for that method.
+	The cover page is our way of verifying that you understand the concepts covered in the corresponding assignment. Please answer the questions with comprehensive and insightful responses. This is also the place for you to include any issues you had with the assignment, and anything that you think the TAs should take into consideration while grading it. 
 
-	Deviations from the assignment should be listed as well. Keep in mind that any significant deviations should also be cleared with the instructor in advance. 
 -  **Write a header comment on every file you create**.
 
 	It should have: 
@@ -173,7 +172,7 @@ public static boolean withdraw (int amount) {
 				<dd>should be last so people can find it quickly</dd>
 			</dl>
 		</dd>
-	</dl>
+	</dl>  
 
 - **Use brief inline comments** whenever the meaning of the code is not immediately obvious. For example, inline comments can be useful to summarize cases in a conditional expression.
 
@@ -193,11 +192,6 @@ The comment in the following example adds no information and should be omitted s
 
 `int rectangleWidth = 5; //the rectangle has a width of 5`
 
--  When a CSE 132 assignment asks for test cases, **present your test cases clearly and methodically.**
-    *   Test cases should be ordered logically, preferably in the same order as the code being tested.
-    *   Whenever possible, choose test cases whose expected output be quickly computed in your head (without the need for a calculator).
-    *   When there are only a few possible inputs, test them all. Otherwise, choose test cases that exercise all branches of the code (for example, one test case that satisfies the condition in an if statement and a second test case that doesn't satisfy the condition).
-    *   Be thorough. Pretend that you are an adversary trying to "trick" the program into giving the wrong answer. For example, test cases should include zero or negative values even if the "normal" case is a positive number. However, you are not obligated to test inputs that violate your stated assumptions.
 -  **Be professional.** Use the same care in preparing your code as you would for any writing assignment. Avoid jokes in your code, slang terms, crude comments, etc.
 
 -  **Use common sense.** Remember that the CSE 132 style guide is only a guide. Your primary concern should be making sure that others can read and understand the text of your program. If you think an additional comment or particular organization will get your ideas across more effectively, do it. However, if you are considering deviating significantly from the guidelines or if you are in doubt about something, discuss it with us first.

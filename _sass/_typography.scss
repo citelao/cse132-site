@@ -12,6 +12,12 @@ a {
 	}
 }
 
+*:target {
+	background: $target-background-color;
+	transform: scale(1.2);
+	transition: transform 0.5s cubic-bezier(.87,-.41,.19,1.44);
+}
+
 h1,
 h2,
 h3,
@@ -91,8 +97,23 @@ ul {
 	list-style: square;
 }
 
-.footnote,
 sup {
-	vertical-align: super;
-	font-size: 0.5em;
+	vertical-align: top;
+	font-size: 0.7em;
+}
+
+.footnote {
+	color: #fff;
+	background: $link-color;
+	font-family: 'Work Sans', sans-serif;
+	padding: 0.4em;
+	margin: 0 0.2em;
+
+	border-radius: 1em;
+
+	&:hover {
+		background: darken($link-color, 10%);
+		color: #fff;
+		text-decoration: none;
+	}
 }

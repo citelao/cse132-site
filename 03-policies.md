@@ -9,21 +9,16 @@ permalink: policies/
 Your course grade in CSE132 will be based on a weighted average of the following components:
 
 ###Studio work (20%)
-- Your work in studio will typically be undertaken in small groups. You must be arrive on time and be present in studio to receive credit, and you must work steadily through the session until the TAs have cleared your group's work.
-- You are not graded on how far you get, but on how well you explore the issues you are investigating.
+Your work in studio will typically be undertaken in small groups. You must be arrive on time and be present in studio to receive credit, and you must work steadily through the session until the TAs have cleared your group's work. You are not graded on how far you get, but on how well you explore the issues you are investigating.
 
 ###Lab Assignments (45%)
-- Lab assignments are designed to provide practical experience with central topics of the course. For most labs, you will be able to work in pairs.
-- For each lab assignment, you will have lab conferences with a TA to explain your design, demonstrate your working solution and to present of your implementation. Your presentations at these conferences are part of your grade on the assignment. 
-- Each assignment will have a rubric that details how the work will be graded. See the late policy for how turning in assignments late will affect your grade.
+Lab assignments are designed to provide practical experience with central topics of the course. For most labs, you will be able to work in pairs. For each lab assignment, you will have lab conferences with a TA to explain your design, demonstrate your working solution and to present of your implementation. Your presentations at these conferences are part of your grade on the assignment. Each assignment will have a rubric that details how the work will be graded. See the late policy for how turning in assignments late will affect your grade.
 
 ###Exams (25%)
-- There will be two exams (the midterm (10%) and the final (15%)) to evaluate your understanding of concepts covered in lecture and in the readings. 
-- There will be a help session devoted to reviewing for each exam.
+There will be two exams (the midterm (10%) and the final (15%)) to evaluate your understanding of concepts covered in lecture and in the readings. There will be a help session devoted to reviewing for each exam.
 
 ###Quizzes (10%)
-- Quizzes will cover material from lecture and the reading assignments. Any question related to the lecture or reading assignments to date is fair game on a quiz. 
-- Quizzes will occur during class (most likely at the beginning or end of class) or in studio sessions, and may not be announced in advance. Since attendance is required, a missed quiz will count as a zero. Your lowest quiz score will be dropped from your quiz average.
+Quizzes will cover material from lecture and the reading assignments. Any question related to the lecture or reading assignments to date is fair game on a quiz. Quizzes will occur during class (most likely at the beginning or end of class) or in studio sessions, and may not be announced in advance. Since attendance is required, a missed quiz will count as a zero. Your lowest quiz score will be dropped from your quiz average.
 
 Your course grade will be determined approximately as follows.
 
@@ -96,23 +91,23 @@ Lab sections are held each Wednesday to facilitate your work on assignments. Whe
 A missed exam counts as a zero. If you are ill on the day of an exam, notify the instructor as soon as possible. The illness must be documented by health services or other reasonable authority in order to make up the exam.
 
 ##Collaboration Policy
-- **Honestly represent your work.** The material you turn in for course credit must be a fair representation of your own work. Copying another's work is strictly prohibited.
-- **Give help appropriately.** When helping someone, it is important not to simply give them a solution, because then they may not understand it fully and will not be able to solve a similar problem next time. It's always important to take the time to help someone think through the problem and develop the solution. Often, this can be accomplished by asking them a series of leading questions. Remember the old saying:
+**Honestly represent your work.** The material you turn in for course credit must be a fair representation of your own work. Copying another's work is strictly prohibited.  
+
+**Give help appropriately.** When helping someone, it is important not to simply give them a solution, because then they may not understand it fully and will not be able to solve a similar problem next time. It's always important to take the time to help someone think through the problem and develop the solution. Often, this can be accomplished by asking them a series of leading questions. Remember the old saying:
 
 >*Give someone a fish and they'll eat for a day.
 Teach someone to fish and they'll eat for a lifetime.*
 
-- **Give credit for help received.** If you receive help from people (besides the TAs and the instructor), you must list their names where appropriate using comments in the material you submit.
-- **Work individually or in groups.**
-	- Studio work is collaborative and is always performed in groups of two to four people. Working in groups can be beneficial because you can discuss design options and catch each other's mistakes.
-	- Pair programming is permitted for most lab assignments, subject to the following rules:
-		- Only two people may work together. (Groups of three or more are not allowed.) 
-		- You must work side by side on the entire lab. It is your responsibility to schedule time to complete the lab when both of you are available.
-		- You must take turns at the keyboard, preferably switching at each step of the assignment.
-		- You must discuss each solution as you are completing the lab (not just watch the other person type).
-		- You may NOT divide up the assignment and each do part of it. Both partners must participate in completing the entire assignment.
+**Give credit for help received.** If you receive help from people (besides the TAs and the instructor), you must list their names where appropriate using comments in the material you submit.  
+
+**Work individually or in groups.** Studio work is collaborative and is always performed in groups of two to four people. Working in groups can be beneficial because you can discuss design options and catch each other's mistakes. Pair programming is permitted for most lab assignments, subject to the following rules:  
+      1. Only two people may work together. (Groups of three or more are not allowed.)   
+      2. You must work side by side on the entire lab. It is your responsibility to schedule time to complete the lab when both of you are available.  
+      3. You must take turns at the keyboard, preferably switching at each step of the assignment.  
+      4. You must discuss each solution as you are completing the lab (not just watch the other person type).  
+      5. You may NOT divide up the assignment and each do part of it. Both partners must participate in completing the entire assignment.  
 		
-- **If in doubt, ask your instructor.** Be sure to ask in advance if you have any doubts about whether a certain type of collaboration is acceptable. Academic integrity violations carry severe penalties and may result in a failing course grade and/or dismissal from the course or the university.
+**If in doubt, ask your instructor.** Be sure to ask in advance if you have any doubts about whether a certain type of collaboration is acceptable. Academic integrity violations carry severe penalties and may result in a failing course grade and/or dismissal from the course or the university.  
 
 
 

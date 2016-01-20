@@ -1,5 +1,6 @@
 ---
 title: Instructor & TAs
+author: Josh Gelbard
 permalink: instructors/
 ---
 
