@@ -24,12 +24,13 @@ module Jekyll
 
             return item.data["permalink"] unless replacement_keys.length > 0
 
-            replacements = replacement_keys.map { |r|
+            keys, values = replacement_keys.map { |r|
                 next if item.url_placeholders.keys.include? r.to_sym
                 next if r == "permalink" # haha don't try that.
 
                 [r.to_sym, item.data[r].to_s]
-            }.compact.to_h
+            }.transpose
+            replacements = Hash[*keys.zip(values).flatten]
 
             template = (item.respond_to? :url_template) ? item.url_template : item.template
 
