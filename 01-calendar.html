@@ -61,6 +61,9 @@ author: Ben Stolovitz
 								<a href="{{ site.baseurl }}{{ assignment.url }}">Assignment {{ assignment.week }}</a>
 								{% endif %}
 							{% endfor %}
+							{% for assigned in day.assigned %}
+								{{ assigned }}
+							{% endfor %}
 						</td>
 						<td class="calendar__item">
 							{% for studio in site.studios %}
@@ -72,6 +75,9 @@ author: Ben Stolovitz
 								{% if assignment.due == day.date %}
 								<a href="{{ site.baseurl }}{{ assignment.url }}">Assignment {{ assignment.week }}</a>
 								{% endif %}
+							{% endfor %}
+							{% for due in day.due %}
+								{{ due }}
 							{% endfor %}
 						</td>
 					</tr>
