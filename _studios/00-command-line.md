@@ -188,7 +188,7 @@ Time to get your stuff up on the internet.
 You need to checkout your code into a local copy so you can make edits.
 
 1. In your home directory, create a directory to hold your SVN repos. I called mine `svn/` because I'm creative.
-2. Browse into that directory, and then type `svn checkout svn.seas.wustl.edu/repositories/WUSTLUSERNAME/cse132_sp16/`. You will need to add an additional `--username WUSTLUSERNAME` argument if you did not SSH with that username.
+2. Browse into that directory, and then type `svn checkout https://svn.seas.wustl.edu/repositories/WUSTLUSERNAME/cse132_sp16/`. You will need to add an additional `--username WUSTLUSERNAME` argument if you did not SSH with that username.
 3. Enter your WUSTL password when prompted. Do **not** save it unencrypted. That would be bad. The letters won't appear, as always.
 4. `cd` to the new SVN directory. It should have an `Arduino/` folder and some files prefixed with `.`.
 
