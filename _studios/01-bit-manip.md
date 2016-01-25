@@ -44,7 +44,7 @@ But before we can ever talk about I/O (input/output) and programs and compiling 
 
 To that end, we've prepared some pen-and-paper excercises to get you thinking about data like a computer does.
 
-If you are having trouble with the concepts behind any of these questions, try reading Chapter 7 in the [course textbook](http://www.cse.wustl.edu/~roger/cse132/cc_v0_04.pdf) or look through the [Guide to Information Representation](TODO).
+If you are having trouble with the concepts behind any of these questions, try reading Chapter 7 in the [course textbook](http://www.cse.wustl.edu/~roger/cse132/cc_v0_05.pdf) or look through the [Guide to Information Representation](TODO).
 
 #### Binary & Bases
 
@@ -69,10 +69,10 @@ Hexadecimal is base 16. It ends up being a very nice way of representing compute
 
 You've built programs with Eclipse. You've written classes in Java before. But you probably haven't ever built a program the true "hacker" way, with a text editor, a compiler, and fifteen pages of reference open beside you. So let's build one.
 
-1. SSH into the `shell.cec.wustl.edu` computers again (same steps as Studio 1).
+1. SSH into the `shell.cec.wustl.edu` computers again (same steps as Studio 0).
 2. Make sure you `qlogin`.
 3. Browse to your repository working copy from Studio 0 and `svn update` to get some new files we've added to your repo.
-4. Open `shell/c/helloworld.c` in whichever text editor you last used, probably `nano`.
+4. Now `cd` to the directory c/studio1/ and then open helloworld.c in whichever text editor you last used, probably `nano`.
 
 	There's not much code (in fact, it's not a complete program, but we'll get to that), but there's enough to show off some of the key differences between Java (which you're used to) and C.
 	
@@ -81,7 +81,7 @@ You've built programs with Eclipse. You've written classes in Java before. But y
 	The first is in the first line. This line declares a variable named `message`. The big difference from Java is its type, `char[]`. C does not have `String`s. Instead it uses arrays of `char`s (which makes sense: a string is conceptually a series of characters). We'll explore this further in a bit.
 	
 	<aside class="sidenote">
-	### Entry Points
+	<h3>Entry Points</h3>
 	
 	No matter what type of program you want to make, you need it to start somehow. We call the points in your code where you can begin a running program **entry points**. 
 	
@@ -101,7 +101,7 @@ You've built programs with Eclipse. You've written classes in Java before. But y
 6. This gives you a warning[^warnings]. What's the warning? Understanding exactly what it means requires another 3 years of computer science classes, but you can easily find a fix using Google.
 	
 	You should add exactly one line of code to the top of the `helloworld.c` file.
-7. Recompile your fixed version. This produces a file called `a.out` in your current directory, which you can run by writing the full path to the file (`/home/warehouse/bstolovitz/a.out`) or by using shorthand for the current directory: `./a.out` (`.` indicates the current directory, `..` the parent).
+7. Recompile your fixed version. This produces a file called `a.out` in your current directory, which you can run by using shorthand for the current directory: `./a.out` (`.` indicates the current directory, `..` the parent).
 8. This name is not descriptive, so recompile again, but with the `-o OUTPUTNAME` flag (`gcc INPUT -o OUTPUT`). I chose `helloworld`.
 9. You've successfully compiled a program! Run it (`./WHATEVER_NAME_YOU_GAVE_IT`).
 
@@ -115,23 +115,30 @@ Now it's time to write your own program. It will automatically generate the [bot
 
 <aside class="sidenote">
 ## Printf()
+{:.no_toc}
 
 `printf()` is a pretty daunting function. If you call it with just one parameter, a string: `printf(char[])`, it prints that string. However, this only works with string **literals**, hard-coded constants (like `"these are literally letters"`). It cannot be called like that for **symbolic** strings, like `char[] error = "This is an error"; printf(error);`
 
 This is where the `printf()`'s true brawn comes in. It can **interpolate** placeholder values it calls **conversion specifications** or **format specifications** with variables passed as subsequent parameters.
 
-For example, `printf("I had the %s.", "fish");` would print `I had the fish`, and `printf("%d of the %d passengers didn't have fish", 3, 90);` would print `3 of the 90 passengers didn't have fish`.
+For example, `printf("I had the %s.", "fish");` would print:
+
+ `I had the fish`
+ 
+ and `printf("%d of the %d passengers didn't have fish", 3, 90);` would print:
+
+`3 of the 90 passengers didn't have fish`.
 
 You can normally get a list of these format specifications by running `man printf`, except our version of the documentation doesn't. [This format cheatsheet](http://www.pixelbeat.org/programming/gcc/format_specs.html) should help the curious.
 </aside>
 
-1. Make a new file in the same `shell/c/` directory called `bottles.c`, or something else descriptive.
+1. Make a new file in the same `c/studio1` directory called `bottles.c`.
 2. You will need to use the same `printf()` function that our `helloworld.c` program used, so write the same `#include` line as you did to fix the warning you got earlier.
 3. Add an entry point to your code: a function called `int main(int argc, char** argv)`. This is *different*  than the `helloworld.c` `main()` because this new program is going to *take user input*.
 
 	I suggest `printf()`ing some text and compiling to make sure everything is working. Remember: warnings are bad.
 4. For now, hard-code the number of bottles on the wall as an `int` in your `main()`. It will look just like Java: `int bottles = 5;`.
-5. Use a [`for` loop](http://www.tutorialspoint.com/cprogramming/c_for_loop.htm) (it's the same syntax as Java, but you'll be decrementing *from* `bottles` *to* `0`) & `printf()` to iterate through bottles to 0 and sing the song. 
+5. Use a [`for` loop](http://www.tutorialspoint.com/cprogramming/c_for_loop.htm) (it's the same syntax as Java, but you'll be decrementing *from* `bottles` *to* `0`) & `printf()` to iterate through `bottles` to 0 and print the lyrics to the song. **Note**: To prevent any errors, do not declare any variables in the `for` loop declaration. Instead, declare it above the loop.
 	
 	 Remember that `1` bottle is a special case, and use `printf()`'s **format specification** `%d` to print the correct number (see sidebar **Printf()**).
 6. Make sure your program works up until 99.
@@ -142,6 +149,7 @@ You've written and compiled your first C program from scratch! Now, let's handle
 
 <aside class="sidenote">
 ## Asterisks and funny things
+{:.no_toc}
 
 Now you may be wondering how `char**` is an array of strings. Simple!
 
@@ -165,7 +173,7 @@ We will talk *much* more about pointers later, so don't worry if this is confusi
 
 	This is because the argument is not an `int`, it is an ASCII `char`. ASCII is an **encoding** that assigns letters to numbers. Up until now, we have only been able to represent numbers in binary, and that remains true, but if we *assign* letters to certain numbers, we can represent letters as well. Running the `man 7 ascii` command will show you a list of all ASCII characters. 
 	
-	What's the ASCII number for `0`? `A`? If this is confusing or difficult, consider reading Chapter 7 in the [course textbook](http://www.cse.wustl.edu/~roger/cse132/cc_v0_04.pdf) or looking through the [Guide to Information Representation](TODO).
+	What's the ASCII number for `0`? `A`? If this is confusing or difficult, consider reading Chapter 7 in the [course textbook](http://www.cse.wustl.edu/~roger/cse132/cc_v0_05.pdf) or looking through the [Guide to Information Representation](TODO).
 	
 	You'll notice that there are no non-English characters. ASCII is an American standard and can only represent pure Latin letters. Unicode is the standard encoding that can represent everything from Latin to Klingon to Arabic to [emoji](http://www.unicode.org/emoji/charts/emoji-candidates.html).
 3. [Write a function](http://www.cs.utah.edu/~germain/PPS/Topics/C_Language/c_functions.html) separate from `main()` (above it in the file) that converts single ASCII characters `0` through `9` into the correct `int`.
@@ -187,23 +195,13 @@ That function you wrote was for education<sup>tm</sup>. C already has a function
 2. You can now use a [function called `atoi(char*)`](http://pubs.opengroup.org/onlinepubs/9699919799/functions/atoi.html) to convert strings into integers. 
 
 	You want to send the second element in your `argv` array (`argv[1]`) through this function and use the number it returns as your number of bottles.
-3. At the beginning of your song, include a little ode of some sort to the first character of your number, just to show off the other function you wrote.
+3. To test your program, recompile and execute `./a.out` or similar with the value `99`.
 
 # Check out
 
-This is not really a new part of this studio, but more of a reminder. 
+This is not really a new part of this studio, but more of a reminder. If you're really pressed for time, skip to step 3 and **do not leave** before doing step 4.
 
 1. Use `svn status` and `svn add` to add your new files to the repository where appropriate. You do *not* need to re-add tracked files (those that do not have `?`s).
 2. Commit your new files using `svn commit -m "commit message"`
-3. Find a TA to check out your studio and you are done! If you have free time you might want to start working on Assignment 1.
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
+3. Find a TA to check out your studio so you get credit for your work.
+4. **VERY IMPORTANT**: Type `logout` to end your `qlogin` session.
