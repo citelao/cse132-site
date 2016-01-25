@@ -44,7 +44,7 @@ But before we can ever talk about I/O (input/output) and programs and compiling 
 
 To that end, we've prepared some pen-and-paper excercises to get you thinking about data like a computer does.
 
-If you are having trouble with the concepts behind any of these questions, try reading Chapter 7 in the [course textbook](http://www.cse.wustl.edu/~roger/cse132/cc_v0_05.pdf) or look through the [Guide to Information Representation](TODO).
+If you are having trouble with the concepts behind any of these questions, try reading Chapter 7 in the [course textbook](http://www.cse.wustl.edu/~roger/cse132/cc_v0_05.pdf) or look through the [Guide to Information Representation](/~cse132/guides/intro-to-information.html).
 
 #### Binary & Bases
 
@@ -173,7 +173,7 @@ We will talk *much* more about pointers later, so don't worry if this is confusi
 
 	This is because the argument is not an `int`, it is an ASCII `char`. ASCII is an **encoding** that assigns letters to numbers. Up until now, we have only been able to represent numbers in binary, and that remains true, but if we *assign* letters to certain numbers, we can represent letters as well. Running the `man 7 ascii` command will show you a list of all ASCII characters. 
 	
-	What's the ASCII number for `0`? `A`? If this is confusing or difficult, consider reading Chapter 7 in the [course textbook](http://www.cse.wustl.edu/~roger/cse132/cc_v0_05.pdf) or looking through the [Guide to Information Representation](TODO).
+	What's the ASCII number for `0`? `A`? If this is confusing or difficult, consider reading Chapter 7 in the [course textbook](http://www.cse.wustl.edu/~roger/cse132/cc_v0_05.pdf) or looking through the [Guide to Information Representation](/~cse132/guides/intro-to-information.html).
 	
 	You'll notice that there are no non-English characters. ASCII is an American standard and can only represent pure Latin letters. Unicode is the standard encoding that can represent everything from Latin to Klingon to Arabic to [emoji](http://www.unicode.org/emoji/charts/emoji-candidates.html).
 3. [Write a function](http://www.cs.utah.edu/~germain/PPS/Topics/C_Language/c_functions.html) separate from `main()` (above it in the file) that converts single ASCII characters `0` through `9` into the correct `int`.
