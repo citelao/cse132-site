@@ -1,0 +1,18 @@
+table {
+	width: 100%;	
+}
+
+thead {
+	border-bottom: 1px solid #333;
+}
+
+tr:nth-child(even) {
+	background: rgba(50, 50, 50, 0.1);
+}
+
+td,
+th {
+	text-align: center;
+	vertical-align: top;
+	padding: 0.2em;
+}
