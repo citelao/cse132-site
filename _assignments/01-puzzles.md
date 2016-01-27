@@ -6,6 +6,9 @@ assigned: 2016-01-27
 due: 2016-02-03
 ---
 
+* This will be a TOC
+{:toc}
+
 ## The idea
 
 In this assignment you will use bitwise and Boolean operators to solve basic logical operations on numbers. These logic puzzles will help you better understand how binary fits into the day-to-day mechanics of computing. In other words, this assignment will help you think about how computers actually look at and understand data that they interact with.  
@@ -86,6 +89,17 @@ C has never heard of this newfangled `import` business. It does things the old f
 
 #### Header files
 
+<aside class="sidenote">
+##### The technical side of things
+{:.no_toc}
+
+We don't do it in this project, but most other codebases put **include guards** in their header files. Include guards are snippets of macro code that prevent the same header file from being included twice.
+
+This shouldn't out-of-hand seem like a big deal: our header files and source files have the same functions mentioned twice, and that's not a problem. That's because there's a distinction in C between **definition** and **declaration**. You **declare** that a function exists in the header file, but you can **define** how it actually works later. However, you *cannot* define and declare any function more than once each.
+
+Double inclusion is inevitable in larger projects, so we've worked out a [canonical form of writing include guards](https://en.wikipedia.org/wiki/Include_guard). That's right: it's so standard it has its own wikipedia page.
+</aside>
+
 You *could* use the `#include` macro to glue together your other code (write two `.c` files and `#include` one in the other), but that is slow: if I wrote `aLibrary.c` and `aProgram.c` like this, where `aProgram.c` includes the library, I would have to recompile `aLibrary.c` every time I recompiled `aProgram.c`, even if it didn't change. That's not fun.
 
 Instead, we `#include` **header files**, specially written files that simply tell the compiler what functions exist in our other code. Thus all our code splits in two: for each **source file** we have one **header file**. The header files allow you to compile each source file individually, without actually including any other sources. When we want to create our final program, we **link** the compiled source files together into our final executable.
@@ -112,7 +126,7 @@ A makefile is simply a list of files you want to create, followed by instruction
 
 The syntax is a bit... interesting... but most of the work is actually done for you, automatically. We'll build a small one today.
 
-## The Assignment
+## The assignment
 
 In order to finish this assignment you must complete the `manip.c`, `manipFunctions.c` and `Makefile` documents in the `c/assignment1/` folder in your repository.
 
@@ -155,6 +169,7 @@ You'll have to make a few changes to get your program working, though.
 
 <aside class="sidenote">
 ### Getopt()
+{:.no_toc}
 
 The code we've provided should be fairly easy to understand, though it is designed with further understanding of the command line and we do not expect you to be able to create this program independently.
 
@@ -183,6 +198,7 @@ In any case, this is a long way of saying that standard library does a lot of th
 
 <aside class="sidenote">
 ### Running `manip` manually
+{:.no_toc}
 
 After you compile your program with `make`, you can run it like any other compiled program: `./manip`. If you do so, the program will tell output simple help text detailing the possible arguments.
 
@@ -215,23 +231,33 @@ Make sure to recompile your program as you change your code.
 	- `int hasAZero(int num)`: At least one bit in `num` is a one.
 	- `int hasAOne(int num)`: At least one bit in `num` is a zero.
 	- `int leastSigHasAOne(int num)`: At least one bit in the *least* significant byte of `num` is a one.
-	- `int mostSigHasAOne(int num)`: At least one bit in the *most* significant byte of `num` is a one.
-	- `int mostSigBitInt(int num)`: The most significant bit of `num` is a one.
-	- `int mostSigBitLong(long num)`: The most significant bit of `num` is a one.  Remember, in C `long`s are 8 bytes (64 bits) in length.
-	- `int mostSigBitChar(char num)`: The most significant bit of `num` is a one.  Remember, in C `char`s are 1 byte (8 bits) in length.
+	- `int negate(int num)`: Return the bit-for-bit negation of `num`.
+	- `int isNegativeInt(int num)`: the integer `num` is negative.
+	- `int isNegativeLong(long num)`: the long `num` is negative.  Remember, in C `long`s are 8 bytes (64 bits) in length.
+	- `int isNegativeChar(char num)`: the char `num` is negative.  Remember, in C `char`s are 1 byte (8 bits) in length.
 3. Once you have completed your code (or while you are writing it), you can test it with `make test`. A correct program should show no output after `diff reference.txt output.txt`, which prints differences between the correct `reference.txt` and your program's `output.txt`.
 
 	Note that this is not a guarantee of correctness, but a simple test we've provided to help you write your program. You should try manual values.
 
 ## The check-in
+
+1. `curl` the `cover-page.txt` from `https://wustl.box.com/shared/static/tagdqksa5h1eohpndkw8r5w63prz2hid.txt` into a file in your repository. Use the `-L` flag to follow redirects. You may have to review `curl` syntax.
+2. Fill `cover-page.txt` out.
+3. Add it to your SVN repo as appropriate with `svn add`, then `svn commit` your changes.
+4. Use `svn status` to make sure everything commited, then check your repository online as you've done before.
+5. Check out with a TA.
+
+### Rubric
+
 - 15pts: Does your finished program work?
-    - Program compiles correctly 
-    - Correctly shifts bits and prints out the result 
+    - Program compiles correctly
+    - Correctly shifts bits
     - Functions are defined correctly
     - Student is able to show that they can run the program
     - The program is neat and follows the style guide
 - 5pts: Is the cover-page correct?
     - Cover page is completely filled out
-    - Boolean and bitwise operations
-    - 3 byte data type question
-    - Program organization question
+    - Correctness: Boolean and bitwise operations
+    - Correctness: 3 byte data type question
+    - Correctness: Program organization question
+    - Correctness: Makefile implicit rule
