@@ -6,7 +6,6 @@ assigned: 2016-01-27
 due: 2016-02-03
 ---
 
-
 ## The idea
 
 In this assignment you will use bitwise and Boolean operators to solve basic logical operations on numbers. These logic puzzles will help you better understand how binary fits into the day-to-day mechanics of computing. In other words, this assignment will help you think about how computers actually look at and understand data that they interact with.  
@@ -53,7 +52,7 @@ Not all numbers are the same length.  Because of this it is useful to have sever
 
 By default, all of these values are `signed` and can store both positive and negative numbers. Their possible values  range from $-2^{n-1}$ and $2^{n-1} - 1$, where `n` is the number of bits in the data type. `unsigned` numbers range from $0$ to $2^{n}-1$.
 
-Data types in [Java](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) have different lengths then in C.
+Data types in [Java](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) have different lengths than in C.
 
 [^csize]: All sizes given for the 64-bit C compiler which runs on the computers you ssh into. Java has different sizes, as do several types of 32-bit C.
 
@@ -115,7 +114,7 @@ The syntax is a bit... interesting... but most of the work is actually done for 
 
 ## The Assignment
 
-In order to finish this assignment you must complete the `logic.c`, `logicFunctions` and `Makefile.txt` documents in the `assignment1/` folder in your repository.
+In order to finish this assignment you must complete the `manip.c`, `manipFunctions.c` and `Makefile` documents in the `c/assignment1/` folder in your repository.
 
 ### `Make`: our first step
 
