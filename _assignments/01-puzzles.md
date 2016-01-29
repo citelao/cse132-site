@@ -228,8 +228,8 @@ Make sure to recompile your program as you change your code.
 	
 	For each of the test in `manipFunctions.c`, use only the bitwise and Boolean operators listed above (i.e., **no `if-then` tests or `while` loops** are allowed) to write functions that return `1` if the input matches the condition given and `0` otherwise. You should be able to solve each in one line.
 
-	- `int hasAZero(int num)`: At least one bit in `num` is a one.
-	- `int hasAOne(int num)`: At least one bit in `num` is a zero.
+	- `int hasAZero(int num)`: At least one bit in `num` is a zero.
+	- `int hasAOne(int num)`: At least one bit in `num` is a one.
 	- `int leastSigHasAOne(int num)`: At least one bit in the *least* significant byte of `num` is a one.
 	- `int negate(int num)`: Return the bit-for-bit negation of `num`.
 	- `int isNegativeInt(int num)`: the integer `num` is negative.
