@@ -25,7 +25,7 @@ Arduino programs, however, are not written in Java. They are written in a varian
 
 Today you will get accustomed to the basics of Arduino C by writing a simple "heartbeat" program and uploading it to your Arduino board.
 
-Then you will wire an electrical circuit that connects with the board, something impossible to do with a regular desktop computer.
+Then you will write an identical program in Java and compare the two programs to understand the differences between the two systems.
 
 #### Objectives
 
@@ -122,6 +122,7 @@ Taking a couple moments now to change the font size might save you hours of squi
 	On Windows, I've heard a lot about [TortoiseSVN](https://tortoisesvn.net), which integrates with System Explorer, so you can right-click on SVN files and commit them from there.
 
 	Any other SVN app will also work. But none are necessary: Eclipse will do the trick.
+
 [^arduinomac]: `Arduino>Preferences...` on Mac.
 
 ### Running a program
@@ -212,52 +213,6 @@ Now compare how good your Arduino is at keeping time compared to your desktop or
 
 1. Start up both programs and observe how long it takes to start drifting in time relative to one another. Make note of this to tell your TA during checkout.
 2. Add some code to your Arduino program that displays the return value from the `millis()` function. How many milliseconds should elapse every iteration? What do you actually see? What does this imply about the reliability of timing using `delay()`?
-
-## Wiring the LED
-
-Now, wire up an external blinking LED to the Arduino. This is not a terribly important part of studio, so don't stress if you're running out of time. We want to introduce circuits to those of you who aren't too hot on the concept because we require some wiring for this week's assignment. 
-
-If you are running out of time, just keep this section in mind for later.
-
-If you've never worked with circuits before, we have a couple of resources for you! We have:
-
-- the **basic introduction** in this studio. Read on to grab that one.
-- our **Introduction to Circuits**, and
-- Sparkfun's [**What is a Circuit**](https://learn.sparkfun.com/tutorials/what-is-a-circuit).
-
-### Circuits?
-
-A **circuit** is a flow of energy from high to low. It is not physical, like gravity's pull from high places to low places, but electrical, from places of high charge to low charge.
-
-A circuit *must* disipate it's energy in some way, whether it's via heat, light, mechanical movements, or whatever else you can plug into a circuit these days. That's why putting the edges of a paperclip on either end of a battery gets really hot[^hot].
-
-[^hot]: This was de rigueur in my middle school, until the teacher confiscated the batteries because she didn't want us to burn our hands.
-
-	You probably won't get hurt if you do this with D batteries (we certainly didn't have any major injuries), but don't do this with your wall sockets. The D battery heats the paperclip up too much to comfortably touch... the wall socket will *literally kill you*. Electricity is fun!
-	
-That's why, as you'll see, we *resist* circuits. As long as there is a meaningful element on the circuit doing work, like a motor or resistor, the circuit won't typically heat up. **LEDs do not effectively resist a circuit**: circuits must have some other type of resistor to avoid overheating.
-
-<aside class="sidenote">
-#### Diode another day
-
-**Diodes** are electrical components that completely block current in one direction, but allow it freely in another. **LEDs**, or Light-Emitting Diodes, are special diodes that, unsurprisingly, emit light.
-
-Because these components are diodes, they do not provide effective resistance. Without a separate resistor on the same circuit (which can be any electrical device, like a motor, traditional light bulb, etc: "resistor" is kind of a catch-all), almost all the energy in the circuit will do work inside the LED. This can cause the LED to fizzle out and cost the CSE department at least 4 cents.
-
-This explains their circuit diagram. The diode is represented as a triangle pointing towards a line. If energy tries to flow from the line side (the **cathode**) to the triangle side (the **anode**), it will fail completely, but the other way---anode to cathode---is completely fine.
-</aside>
-
-1. The first step, then, in building our simple circuit, is hooking into pin 13. You shouldn't notice anything until you complete the circuit because, without a full flow *from* high to low, electricity can't flow down that path. Basically, until you finish wiring your LED, pin 13 should continue to flash.
-	
-	Place one end of a TODO RESISTANCE resistor into pin 13.
-2. Attach the **anode** end of your LED (the long stem or **pin**) to the free end of the resistor.
-3. Attach the **cathode**, the short pin, of your LED to the `GND` pin on your LED.
-	
-	If you wired the LED in the correct direction, it should blink just like the board's LED blinked.
-	
-The final circuit diagram, then, should look something like this:
-
-[ TODO circuit diagram: pin to LED to gnd ]
 
 ## Finishing up
 
