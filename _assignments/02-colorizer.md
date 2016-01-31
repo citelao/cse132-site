@@ -17,7 +17,6 @@ Your indicator light will be an RGB LED that scales between two colors and then 
 
 By the end of this assignment, you should know how to wire up circuits that produce continuous ("analog") values, read these values into your Arduino, and simulate analog output from your Arduino using Pulse-Width Modulation (PWM). Let's go!
 
-
 ## The background
 
 ### Potentiometers
@@ -101,7 +100,7 @@ Let's get started with the assignment.
 	
 	You'll want to resist each of the three other leads individually.
 	
-	Your circuit should look something like this: TODO sidenote this
+	Your circuit should look something like this:
 	
 	TODO image of circuit.
 	
@@ -112,7 +111,7 @@ Let's get started with the assignment.
 
 ### Guidelines
 
-You are given pretty much free reign to complete this assignment as you choose. However, in order to make our lives a lot easier once it comes time to grade everything, pay attention to these coding guidelines, as well as the style guide for this class (TODO link):
+You are given pretty much free reign to complete this assignment as you choose. However, in order to make our lives a lot easier once it comes time to grade everything, pay attention to these coding guidelines, as well as the [style guide](/~cse132/style-guide/) for this class:
 
 - Use exactly **four resistors** in your circuitry.
 - Keep arbitrary constants (pin numbers, cutoff thresholds, colors, etc) as **compile-time constants** near the top of your Arduino program, using [`#define MY_CONSTANT value`](https://www.arduino.cc/en/Reference/Define).
@@ -121,4 +120,13 @@ You are given pretty much free reign to complete this assignment as you choose. 
 
 ## The check-in
 
-TODO copy first two levels from rubric
+- 15pts: Did the lab work?
+	- Is it wired correctly?
+	- Does it obtain real-world values as input?
+	- Does it output real-world values?
+	- Is it an easy grade (follow the **Guidelines**)?
+- 5pts: Is the cover page correct?
+	- Complete?
+	- Correctness: PWM
+	- Correctness: `analogRead()` conversions
+	- Correctness: resisting circutits
