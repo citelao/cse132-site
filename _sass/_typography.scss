@@ -28,6 +28,9 @@ h7,
 p {
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
 }
 
 h1,

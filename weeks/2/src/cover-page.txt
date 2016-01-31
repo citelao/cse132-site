@@ -1,0 +1,48 @@
+# CSE132 Assignment 1 Cover Page
+
+By submitting this assignment, you certify that you have read, understood, and
+complied with the CSE132 collaboration policy. You are also certifying that
+the following information is complete and truthful.
+
+
+## Basic Information
+
+Name:
+Partner:
+Email Address:
+Lab Section:
+
+List people who helped you on this assignment 
+(outside of TAs, instructors, or partners):
+
+List outside sources you used on this assignment
+(other than those linked in the writeup):
+
+
+
+## Assignment Overview
+
+What challenged you about this assignment?
+
+What did you learn during this assignment?
+
+Were you unable to complete anything? Explain:
+
+Is there anything we should know about your work on this assignment:
+
+
+
+## Assignment Questions
+
+In a few sentences, what does PWM do, on a physical level? Can the Arduino 
+actually output a voltage that is not 0 or 5 Volts?
+
+In a few sentences, how does your program convert the input from `analogRead` 
+into a voltage? Could you generalize this into an equation to get a voltage
+given an `analogRead`?
+
+Why do you have to put resistors on both circuits? Using the phrase 
+"explosions will ensue" is quite acceptable in your answer, if a bit of an 
+exaggeration:
+
+
