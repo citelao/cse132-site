@@ -2,6 +2,7 @@
 title: Introduction to Finite State Machines
 week:
 author: Josh Gelbard and Ben Stolovitz
+short: FSMs
 ---
 
 For lab 4 you need to implement the protocol we designed in class. There are multiple ways to do this, but this tutorial will explain the way we think is simplest. Looking at the assignment, you may think you need to use a ton of `if` statements. While you could code the lab in this way, it will probably be very long and confusing.

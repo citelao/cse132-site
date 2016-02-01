@@ -51,7 +51,11 @@
 			<li class="nav-list__item">
 			{% endif %}
 				<a href="{{ site.baseurl }}{{ guide.url }}">
-					{{ guide.title }}
+					{% if guide.short %}
+						{{ guide.short }}
+					{% else %}
+						{{ guide.title }}
+					{% endif %}
 				</a>
 			</li>
 			{% endfor %}

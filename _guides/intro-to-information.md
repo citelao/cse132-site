@@ -1,5 +1,6 @@
 ---
 title: Introduction to Information Representation
+short: Information
 week: 
 - "1"
 author: Ben Stolovitz
