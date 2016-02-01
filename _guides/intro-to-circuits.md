@@ -1,5 +1,6 @@
 ---
 title: An Introduction to Circuits
+short: Circuits
 week:
 - "2"
 ---
