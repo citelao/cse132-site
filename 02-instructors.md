@@ -144,14 +144,13 @@ TA hours begin 1/27
 |-----------|:---------------------|----------------|:----------------------------------------------------|
 | Monday    | Danforth Classroom   | 6:00PM-8:00PM  | Aaron Sun, Nancy Zhou, Timothy Young, Pierce Dhaese |
 | Monday    | Danforth Classroom   | 8:00PM-10:00PM | Thomas Kelly, Eric Vistnes, Ashley Shin, Kerry Li   |
-| Monday    | Urbauer 216          | 5:30PM-6:30PM  | TBD, TBD                                            |
 | Tuesday   | Urbauer 216          | 9:00AM-10:00AM | Claire Heuckeroth, Cindy Chong                      |
-| Tuesday   | Urbauer 216          | 4:30PM-6:30PM  | Claire Heuckeroth, TBD, TBD                         |
+| Tuesday   | Urbauer 216          | 4:30PM-6:30PM  | Claire Heuckeroth,  Andrew Savino, Connor Goggins                         |
 | Tuesday   | Shepley Seminar Room | 6:00PM-8:00PM  | Julia Vogl, Arianna Sze, Robert Derber, Ashley Shin |
-| Tuesday   | Shepley Seminar Room | 8:00PM-10:00PM | Josh Gelbard, Eric Vistnes, Shilpi Sharma, TBD      |
+| Tuesday   | Shepley Seminar Room | 8:00PM-10:00PM | Josh Gelbard, Eric Vistnes, Shilpi Sharma, Jared Korotzer      |
 | Wednesday | Shepley Seminar Room | 7:00PM-9:00PM  | Aaron Sun, Pu Chai                                  |
 | Thursday  | Shepley Seminar Room | 7:00PM-9:00PM  | Bradford Orr, Betsy Wiener                          |
-| Friday    | Urbauer 216          | 2:00PM-4:00PM  | Pu Chai, TBD                                        |
+| Friday    | Urbauer 216          | 2:00PM-4:00PM  | Pu Chai, Ashley Shin                                        |
 | Saturday  | Shepley Seminar Room | 11:00AM-1:00PM | Ray Lo, Sean Schaffer                               |
 | Sunday    | Danforth Classroom   | 6:00PM-8:00PM  | Thomas Kelly, Nancy Zhou                            |
 | Sunday    | Danforth Classroom   | 8:00PM-10:00PM | Pierce Dhaese, Thomas Clifford                      |
