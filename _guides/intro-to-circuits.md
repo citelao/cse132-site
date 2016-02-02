@@ -18,7 +18,7 @@ This is a barebones version of what your normal computer does: your laptop reads
 That may be hard if you don't know how to *wire* your own circuits, so we wrote this crash course.
 </aside>
 
-This guide is a quick introduction to the mechanics of electricity and simple circuitry. We'll start by explaining the circuit itself in concrete terms, including Ohm's Law, and then dive into circuit diagrams. We'll look at different circuit components and do some intuitive circuit analysis. Then I'll show you how to destroy things using electricity. 
+This guide is a quick introduction to the mechanics of electricity and simple circuitry. We'll start by explaining the circuit itself in concrete terms, including Ohm's Law, and then dive into circuit diagrams. This guide should help you analyze circuits intuitively and understand new components fairly quickly.
 
 ## Table of Contents 
 {:.no_toc}
@@ -50,17 +50,15 @@ So, what is a circuit? A **circuit** is a continuous flow of electric charge[^ch
 	
 	[This guide](http://amasci.com/amateur/elecdir.html) (via [StackExchange](http://electronics.stackexchange.com/a/13753)) provides a deeper look at what we consider to be "charge," if you're interested. 
 	
-[electrons yelling charge!!!]
-
 ## What is electric charge?
 
 "Electric charge" as a concept on its own is hard to explain. It's an intrinsic property of matter, just like mass or position. What does that mean?
 
 An object's **electric charge** is a measurement of *how affected* it is when placed in a magnetic field. Just like you can think of mass as a measure of how hard it is to change an object's velocity (more massive objects are harder to start moving), electric charge is a measure of *how much* or *to what extent*---an empirical property that can only change by transforming the object into something else. 
 
-Because of electricity's history, and physicists' love of simplification, we say that electric charge flows in a circuit, even though in general some real particles *with electric charge* are the real moving parts. The simplification really helps because, in this case, the moving parts actually flow in the *opposite direction* you'd expect. But because we think abstractly, it never really affects our reasoning.
+We describe circuits as "flows of electric charge," but in reality that is a simplification. In most cases, it is a real particle *with electric charge* that flows. However, many different particles carry electric charge, and in very different ways, so thinking about the charge itself flowing rather than mediator particles flowing is very helpful.
 
-We measure charge in "Coulombs," and you will never have to deal with that specific unit in this class, only the *concept* of charge.
+We measure charge in "Coulombs."
 
 ## What is a flow of charge?
 
@@ -76,17 +74,17 @@ The bad news: unlike "normal" potential energy, the amount of electric potential
 
 This difference should not change your mental model too much. Any charged object in an electric field will move to an area of low electric potential, it will just happen faster for higher-charged objects. So aside from that caveat, it makes sense to conceive of this pseudo-potential energy as a normal potential energy.
 
-[diagram of balls on a hill]
+![Balls rolling on a hill demonstrate potential energy as it relates to gravity](circuits/hills.png)
 
 ### Voltage, schmoltage
 
 But even after all this work, we know from classical physics that any potential energy, even compensated for charge, is a strictly *relative* measure. A potential energy must be relative to some reference point since it literally measures the energy that would *potentially* be released as an object moves from it's current location to that reference point.
 
-[diagram of ball on hill, potentials marked with question marks & arrows to 0]
+![No reference point means it's impossible to measure potential.](circuits/hills-and-potentials.png)
 
 The useful measurement for any potiential energy, then, is a measurement *between two points.* In the case of electrical potential, we call that a **voltage**, or $ΔV$---"delta v" ("$Δ$" means "change" in most fields of mathematics, so "change in volts"). Usually we describe it as "voltage *across* something"‚ like across a wire, a circuit, or a lightbulb.
 
-[diagram of ball on hill, with delta-vs]
+![By choosing a reference point, we can measure potential from that reference.](circuits/hills-and-voltages.png)
 
 Measuring voltage requires measuring the difference between two points, and obviously voltage will vary based on where you measure it.
 
@@ -96,9 +94,9 @@ It's not quite descriptive enough to visualize circuits as balls on a hillside. 
 
 Instead of thinking about circuits as basketballs rolling down the hillside, think of them as water flowing through a pipe on that same hill. A pipe has a diameter. If we change that, we can adjust the flow rate. Smaller pipes allow less water through them, and larger pipes allow more.
 
-We can also put waterwheels in the pipe, attached via a shaft to the outside. These waterwheels and different diameters **resist** the **current** of the stream, fighting its flow of charge. Circuits are not physically flows of water, of course,  but most physical circuit components have some intrinsic resistance that *functions* like a pipe diameter or a hard-to-turn waterwheel. This should be intuitive: components *use* the power of the flow to do other work, like heat up, light a filament, or spin a motor. We call components designed specifically to resist the flow of current **resistors**.
+We can also put waterwheels in the pipe that push against the flow of water. These waterwheels and different diameters **resist** the **current** of the stream, fighting its flow of charge. Circuits are not physically flows of water, of course,  but most physical circuit components have some intrinsic resistance that *functions* like a pipe diameter or a hard-to-turn waterwheel. This should be intuitive: components *use* the power of the flow to do other work, like heat up, light a filament, or spin a motor. We call components designed specifically to resist the flow of current **resistors**.
 
-You measure current in amperes, or "amps" for short. The unit symbol is an "$A$"---$45A$ means 45 amps---and you call a given current an "amperage" (so a lightbulb might have an amperage of 12A). You measure resistance in ohms, using an $\Omega$ as the symbol. A given resistance is, boringly, a "resistance."
+You measure current in amperes, or "amps" for short. The unit symbol is an "$A$"---$45A$ means 45 amps---and you call a given current an "amperage" (so a lightbulb might have an amperage of 12A). You measure resistance in ohms, using an $\Omega$ as the symbol. A motor might then have a resistance of $9 \Omega$.
 
 ### Ohm's law
 
@@ -129,8 +127,6 @@ $$ V = IR $$
 
 where $V$ is voltage, $I$ is current, and $R$ is resistance.
 
-[Ohm-igod]
-
 This equation should make intuitive sense: the *energy* that will be expended going between two points should depend on *how much* stuff can get through at any one instant and *how hard it is* for the stuff to get through.
 
 In fact, all electrical components follow this law, with one caveat: resistance sometimes changes based on the voltage. We call circuit components that *don't* change resistance "**ohmic**".
@@ -139,7 +135,7 @@ In fact, all electrical components follow this law, with one caveat: resistance 
 
 It's important to think about this law for a little bit if it doesn't make immediate intuitive sense.
 
-The *resistance* bit of the equation is pretty easy to grok. More resistance? More energy needed. Less resistance? Less energy. The *current* bit threw me for a while, so I'm going to focus on that.
+The *resistance* bit of the equation is pretty easy to make sense of. More resistance? More energy needed. Less resistance? Less energy. The *current* bit threw me for a while, so I'm going to focus on that.
 
 Imagine two elevators lifting people a very long distance (high resistance). One can move 500 people in one trip (high current), and the other only moves 1 person at a time (low current). Which one should require the most energy to run a given trip? Clearly the larger elevator.
 
@@ -169,16 +165,16 @@ Because engineers don't like drawing realistically, we have the **circuit diagra
 #### Odds & ends
 {:.no_toc}
 
-Circuit diagrams use straight lines for wires. Because wiring can get pretty intense, overlapping wires *don't* connect unless there's a dot drawn over them or it looks like a T-intersection.
+Circuit diagrams use straight lines for wires. Because wiring can get pretty intense, overlapping wires *don't* connect unless there's a dot drawn over them or it's T-intersection.
 
-[t-intersection, dot intersection, no dot]
+[TODO? t-intersection, dot intersection, no dot]
 </aside>
 
 The paperclip-battery circuit looks something like this:
 
-[closed loop, expanded line form of high to low, perhaps schematic too]
+![A diagram of the simplest possible circuit, just a simple battery and wire.](circuits/simplestcircuit.png)
 
-The main symbol in this circuit is the battery, attached to the thin wire. Actually, it's two symbols: one symbol for a positive terminal and one for the negative terminal. Sometimes they're grouped togetehr to denote a power cell, or doubled to mean a battery (a **battery** is defined as a stack of **power cells**). In computer circuit diagrams, we generally keep high and low separate, even if they connect to the same battery or Arduino. It keeps the drawing simpler.
+The main symbol in this circuit is the battery, attached to the thin wire. Actually, it's two symbols: one symbol for a positive terminal and one for the negative terminal. Sometimes they're grouped together to denote a power cell, or doubled to mean a battery (a **battery** is defined as a stack of **power cells**). In computer circuit diagrams, we generally keep high and low separate, even if they connect to the same battery or Arduino. It keeps the drawing simpler.
 
 ### Adding resistors
 
@@ -188,7 +184,7 @@ The main symbol in this circuit is the battery, attached to the thin wire. Actua
 
 Resistors have fixed resistances that you can determine by reading the colored bands printed on them. These are codes that label the resistance.
 
-[TODO reading a resistor]
+TODO reading a resistor
 </aside>
 
 This paperclip circuit is an example of poor decision making. The simplest *sensible* circuit, i.e. the simplest circuit I *recommend* building, includes another component: a **resistor**.
@@ -197,7 +193,7 @@ In general, if you want to hook something up to a circuit, there's a symbol for 
 
 Thus, if we plop a resistor on our simplest circuit, we get the simplest sensible circuit:
 
-[ 5v > resistor > ground]
+![The simplest sensible circuit includes a resistor so that it does not overheat.](circuits/simplestsensiblecircuit.png)
 
 ## How to put things on your circuits
 
@@ -211,31 +207,39 @@ Looking up how to work with new components (like potentiometers, switches, capac
 
 **LEDs** are fickle creatures. Unlike traditional lightbulbs, LEDs cannot be placed onto a circuit heedlessly. First, LEDs have **no resistance** (or very little). A circuit with just an LED is similar to the paperclip-battery circuit. It must be resisted separately, with an additional resistor. Second, LEDs only allow current in **one direction**. If placed backward, they will not light up.
 
-These traits are shared among all **diodes**---LED stands for "Light Emitting Diode." Diodes prevent current flowing in one direction and let it through unimpeeded in the other. Take care not to explode your LEDs.
+These traits are shared among all **diodes**---LED stands for "Light Emitting Diode." Diodes prevent current flowing in one direction and let it through unimpeeded in the other. Take care not to explode your LEDs: place resistors on their circuits (different colors have different optimum resistances; read their spec sheets).
 
-[diagram of LED circuit, with resistor. Add note: "pretty little squiggles indicate LED, not regular diode"]
+![An LED circuit includes a resistor as well. The LED symbol has arrows around it indicating that it emits light.](circuits/ledcircuit.png)
 
 ### Arduino input & outut pins
 
-You know that the Arduino has **pins** that can be controlled in code. They can read a circuit's voltage or write one---as **input** or **output** they read or write high or low, on or off. They have a circuit diagram, too: a triangle.
+You know that the Arduino has **pins** that can be controlled in code. They can read a circuit's voltage or write one---as **input** or **output** they read or write high or low, on or off. They are represented as plain wires coming of out a box. They are usually labelled with their name or number ("pin 13", etc).
 
-If a pin *reads* from the circuit, the tip of the triangle points towards the Arduino. If it *writes* to the circuit, the tip points into the circuit. A pin cannot be both.
-
-[arduino pin diagram, input & output]
+In this class, we tend to draw them as triangles: if a pin *reads* from the circuit, the tip of the triangle points towards the Arduino. If it *writes* to the circuit, the tip points into the circuit. A pin cannot be both.
 
 #### Pull-ups
 
 When you begin building circuits to send input to the Arduino, you'll start seeing a pattern in a lot of your circuits. You'll see a $5V$ source, a resistor, and a grounded drain in your circuits. For example, a button might be wired as follows:
 
-[5v > resistor > button > ground, possible connection pts for Arduino describing whether on or off is high or low]
+![A button reading into an Arduino](circuits/buttoncircuit.png)
 
 This soon gets annoying to build, so most modern microprocessors, including the Arduino, have built-in circuitry that does this for you. Setting a pin to be an **input pull-up** pin hooks it up to an *internal* 5V source and resistor, so all you need to do is connect your circuitry to ground to get a working circuit. Arduino pins *by default* are set to pull-up inputs.
 
-[5v > resistor > button > ground, using pull-up resistor]
+![A button reading into an Arduino, but being pulled up by the Arduino's internal resistor.](circuits/pullupcircuit.png)
 
 ### The breadboard
 
-TODO?
+Because circuits are fairly hard to construct as it stands, we prototype on **breadboards**, specially made bricks designed for building circuits.
+
+A breadboard is a collection of several rows of electrical slots. They are sized to fit LEDs, buttons, resistors, and any standard surface-mount electrical component. Each row is generally two columns, each with 5 slots. These 5 slots are connected to each other and nothing else. Therefore, putting wires in two of these slots is identical to physically connecting the wires together.
+
+Each row is independent: they are not attached between rows, nor are they attached across the large gutter that separates the two main columns.
+
+Some breadboards have **bus strips** on the side, long columns with one slot per row, designed to provide power to the whole board. These columns are connected only to themselves, so any slot in this clearly separate column connects to all the other slots in that column. 
+
+Most people building circuits with the Arduino will attach their `5V` or `GND` connections to these strips and connect to that whenever they need to draw power to one of their main rows.
+
+Looking at the bottom of a breadboard can make these connections clear.
 
 ## Conclusion
 
