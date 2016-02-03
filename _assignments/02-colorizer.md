@@ -112,7 +112,7 @@ Let's get started with the assignment.
 	1. Use the circuit from above, but instead of pulling from the `5V` pin on your Arduino, pull from a PWM pin (marked with a `~` on your board).
 	2. Write a simple program (using `analogWrite()` and `delay()`) to gradually fade your LED from on to off.
 
-	This should be more than enough to get you started reading ciruit diagrams.
+	This should be more than enough to get you started reading circuit diagrams.
 
 	</aside>
 
@@ -133,7 +133,7 @@ Let's get started with the assignment.
 
 		Terminal `1` is red, terminal `3` is blue, and terminal `4` is green.
 
-		You can test this circuit by `analogWrite()`ing to each of these pins in your Arduino code. The corresponding color should light up.
+		You can test this circuit by `analogWrite()`ing to each of these pins in your Arduino code. The corresponding color should light up. The full datasheet for the RGB LED can be found [here](http://www.kingbrightusa.com/images/catalog/SPEC/WP154A4SUREQBFZGW.pdf). Look closely at the images on the first page.
 3. Complete the Arduino code so that it linearly scales between two colors of your choice as the potentiometer goes from completely open to completely closed. E.g., pick two colors, A and B.  If the potentiometer is at it's minimum, the LED should show all A.  If the pot is at is't maximum, the LED should show all B.  If it is half-way, it should show the color between A and B (if A is green and B is blue, half-way is cyan).
 
 	
