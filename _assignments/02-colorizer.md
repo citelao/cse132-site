@@ -21,8 +21,6 @@ By the end of this assignment, you should know how to wire up circuits that prod
 
 ### Potentiometers
 
-### Potentiometers
-
 Potentiometers are **variable resistors**, three-terminal circuit elements in which the resistance between the terminals can be varied by turning a physical knob. Two of the terminals allow connection to each end of a fixed resistance, and the third terminal (often called the **wiper**) can be positioned at any point between the end terminals.
 
 A common use for a potentiometer (**pot** for short) is as a **voltage divider**.  If one end terminal is at a positive voltage (say, +5V) and the other terminal is at ground (aka 0V), the wiper voltage will then have a voltage between 0 and +5V, with the specific voltage at the wiper terminal determined by the position of the control knob of the pot.
@@ -59,7 +57,8 @@ Most day-to-day electrical components that measure real-world values provide the
 
 #### Writing out
 
-You built your first circuit in studio this week, wiring up an LED to one of your Arduino's many pins. When you turned that pin on, or digitalWrote `HIGH` to it, the Arduino output $5V$ to that pin. When you turned it off, the Arduino output $0V$.
+In studio, we used pin 13 as a digital output.
+When you turned that pin on, or digitalWrote `HIGH` to it, the Arduino output $5V$ to that pin. When you turned it off, the Arduino output $0V$.
 
 Your Arduino can *only* output one of those two values. This might be sad news if you wanted to light up your RGB LED at anything other than full brightness, but for one thing: **Pulse-Width Modulation** (**PWM** for short). Because the human eye is much, much slower than your Arduino, if you turn an LED off and on very, very rapidly (on the order of 100 times per second), you will perceive that LED as being dimmer than full brightness[^movies]. [The Arduino reference on PWM](https://www.arduino.cc/en/Tutorial/PWM) explains how to do this in more detail.
 
@@ -81,7 +80,7 @@ We've never formally covered it, but you may have guessed that Arduino has two t
 
 Let's get started with the assignment.
 
-1. Open the blank Arduino sketch (in the `Arduino/assignment1/indicator` folder of your repository) called `indicator`.
+1. Open the blank Arduino sketch (in the `Arduino/assignment2/indicator` folder of your repository) called `indicator`.
 2. 
 	<aside class="sidenote">
 	### Overwhelming circuit diagram syndrome
@@ -100,7 +99,7 @@ Let's get started with the assignment.
 	![A simple resisted LED circuit.](../img/ledcircuit.png)
 
 	1. Connect 5V to a row on your breadboard.
-	2. Attach a 200ohm resistor (or as close as possible that you have) as a bridge between this power row and another row. The red LED we are using needs a resistance of about 200 ohms, using a simple calculation you can learn in a physics class.
+	2. Attach a 330 ohm resistor (or as close as possible that you have) as a bridge between this power row and another row. The red LED we are using needs a resistance of about 330 ohms, using a simple calculation you can learn in a physics class.
 	3. Attach the long stem of your LED to this resisted row and the other stem to an adjacent row.
 	4. Ground this final row.
 
@@ -121,29 +120,30 @@ Let's get started with the assignment.
 
 	![The RGB-pot circuit diagram.](../img/assignment-circuit.png)
 
-	1. Attach the **potentiometer**: wire up a circuit from the `5V` pin, through a potentiometer, to ground. Use the two *outer* pins for these connections, although the order does not matter. Connect the final pin (the center pin) to an analog pin of your choice (look for the pins labeled `A0`-`A5`).
+	1. Attach the **potentiometer**: wire up a circuit from the `5V` pin, through a potentiometer, to ground. Use the two *outer* pins (pins 1 and 3) for these connections, although the order does not matter. Connect the final pin (the center pin) to an analog pin of your choice (look for the pins labeled `A0`-`A5`).
 	
 		You can test the circuit by `analogRead()`ing from that pin and `Serial.print()`ing the result. It should be a fluid number between `0` and `1023` as you turn the potentiometer.
 	2. Attach the **LED**: attach resistors to 3 PWM pins your Arduino (you need PWM to modulate each color's brightness). Keep in mind that only some pins are PWM pins. The reference for [`analogWrite()`](https://www.arduino.cc/en/Reference/AnalogWrite) helps there. 
 
 		It's easiest to connect the pins directly to rows on your breadboard with plain wires, then attach resistors from those rows to new rows. You will attach the LED to these new rows.
 
-		But first, we need to decied which resistors to use for which pin. We give you several different types of resistors, each with slightly different resistances. Luckily, these LEDs are tolerant enough to support any real ordering, but there is an "optimal" resistance for each color. Try to choose the closest resistance for each: red, 180ohms; green, 250ohms; blue, 300ohms.
+		But first, we need to decide which resistors to use for which pin. We give you several different types of resistors, each with slightly different resistances. Luckily, these LEDs are tolerant enough to support any real ordering, but there is an "optimal" resistance for each color (that will provide even brightness across the colors). Try to choose the closest resistance for each: red, 220 ohms; green, 240 ohms; blue, 330 ohms.
 
-		Each stem is attached to a different color LED, as you can see in the diagram, with stem `2` as the **common cathode**[^cathode]. You have two ways of numbering the other stem `1`, `3`, and `4`. The easiest is to note that stem `2` is the longest. The other is to find the flat end of the otherwise round LED. The stems count away from it, starting at `1` closest to the notch, and `4` farthest.
+		Each terminal is attached to a different color LED, as you can see in the diagram, with terminal `2` as the **common cathode**[^cathode]. You have two ways of deciphering the numbering the other terminals `1`, `3`, and `4`. The easiest is to note that terminal `2` is the longest. The other is to find the flat end of the otherwise round LED. The terminals count away from it, starting at `1` closest to the notch, and `4` farthest.
 
-		Stem `1` is red, stem `3` is blue, and stem `4` is green.
+		Terminal `1` is red, terminal `3` is blue, and terminal `4` is green.
 
 		You can test this circuit by `analogWrite()`ing to each of these pins in your Arduino code. The corresponding color should light up.
-4. Complete the Arduino code so that it linearly scales between two colors of your choice as the potentiometer goes from completely open to almost closed. 
-	
-	However, decide upon a cutoff voltage (you work for a *very* safety-minded company) that switches the LED to pure red and causes it to blink slowly (using `delay()` as in Studio). When the potentiometer is turned back below this threshold, the program resumes. There can be a small lag before the program resumes (as in, don't try to fix it if one occurs. We'll explain how to get rid of it later).
+3. Complete the Arduino code so that it linearly scales between two colors of your choice as the potentiometer goes from completely open to completely closed. E.g., pick two colors, A and B.  If the potentiometer is at it's minimum, the LED should show all A.  If the pot is at is't maximum, the LED should show all B.  If it is half-way, it should show the color between A and B (if A is green and B is blue, half-way is cyan).
 
-[^cathode]: There are two types of RGB LEDs, **common cathode** and **common anode**. As you might guess, one has a shared cathode as the long stem, and the other has a shared anode as the long stem. Common anode LEDs are actually controlled by writing *high* to the colors you want to shut off, and providing a constant `HIGH` at the anode. Because there is no potential difference at those *high* cathodes, there is no current and no light. We don't use common anode LEDs in this class.
+	
+	In addition, decide upon a cutoff voltage (you work for a *very* safety-minded company) that switches the LED to pure red and causes it to blink slowly (using `delay()` as in Studio). When the potentiometer is turned back below this threshold, the program resumes. There can be a small lag before the program resumes (as in, no need to try to fix it if one occurs).
+
+[^cathode]: There are two types of RGB LEDs, **common cathode** and **common anode**. As you might guess, one has a shared cathode as a single terminal, and the other has a shared anode as a single terminal. Common anode LEDs are frequently controlled by writing *high* to the terminals for the colors you want to shut off, and providing a constant `HIGH` at the anode. Because there is no potential difference between those *high* cathodes and the common anode, there is no current and no light. We don't use common anode LEDs in this class, so feel free to ignore all of this unless you find it interesting in its own right (i.e., common anode RGB LEDs will not be on a quiz or an exam).
 
 ### Guidelines
 
-You are given pretty much free reign to complete this assignment as you choose. However, in order to make our lives a lot easier once it comes time to grade everything, pay attention to these coding guidelines, as well as the [style guide](/~cse132/style-guide/) for this class:
+You are given a lot of flexibility to complete this assignment as you choose. However, in order to make our lives a lot easier once it comes time to grade everything, pay attention to these coding guidelines, as well as the [style guide](/~cse132/style-guide/) for this class:
 
 - Use exactly **three resistors** in your circuitry.
 - Keep arbitrary constants (pin numbers, cutoff thresholds, colors, etc) as **compile-time constants** near the top of your Arduino program, using [`#define MY_CONSTANT value`](https://www.arduino.cc/en/Reference/Define).
