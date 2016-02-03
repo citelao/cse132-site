@@ -81,7 +81,7 @@ We've never formally covered it, but you may have guessed that Arduino has two t
 
 Let's get started with the assignment.
 
-1. Create a new Arduino sketch (in the `arduino/assignment1/` folder of your repository) called `indicator`.
+1. Open the blank Arduino sketch (in the `Arduino/assignment1/indicator` folder of your repository) called `indicator`.
 2. 
 	<aside class="sidenote">
 	### Overwhelming circuit diagram syndrome

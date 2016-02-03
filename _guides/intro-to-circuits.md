@@ -129,7 +129,7 @@ where $V$ is voltage, $I$ is current, and $R$ is resistance.
 
 This equation should make intuitive sense: the *energy* that will be expended going between two points should depend on *how much* stuff can get through at any one instant and *how hard it is* for the stuff to get through.
 
-In fact, all electrical components follow this law, with one caveat: resistance sometimes changes based on the voltage. We call circuit components that *don't* change resistance "**ohmic**".
+In fact, all electrical components follow this law, with one caveat: resistance sometimes changes based on various factors, including voltage. We call circuit components that *don't* change resistance "**ohmic**".
 
 #### An intuitive explanation
 
@@ -151,7 +151,7 @@ It makes sense, then, that potential energy is depenent on current *and* resista
 
 As soon as there is a connection between those two points, there exists a voltage across that wire. Power sources lift up charge from its low, exhausted state to its high, fresh state. A $5V$ battery gives a circuit 5 volts from its positive end to its negative end. If you take a paperclip and put one end on each tip of a AA battery, the end by the bump would be at high voltage and the end by the flat side would be at low voltage.
 
-By convention, we assume charge flows from positive to negative, high to low---or "ground," as it's called. This happens to be the opposite of what actually happens[^generally]—electrons actually flow from negative to positive— but Benjamin Franklin didn't know that when he decided the notation.
+By convention, we assume charge flows from positive to negative, high to low---or "ground," as it's called. This happens to be the opposite of what actually happens for electron flows[^generally]---electrons actually flow from negative to positive---but Benjamin Franklin didn't know that when he decided the notation. Since not all current flow is electrons, we decided not to mess with his convention (see footnote).
 
 [^generally]: Generally... sometimes positive charges actually flow in the opposite direction electrons would move, sometimes both positive and negative charges flow, sometimes they just kinda vibrate back and forth, and all sorts of crazy stuff, but we don't care because a positive charge flowing right is the same as a negative charge flowing left.
 
@@ -239,7 +239,7 @@ This soon gets annoying to build, so most modern microprocessors, including the 
 
 Because circuits are fairly hard to construct as it stands, we prototype on **breadboards**, specially made bricks designed for building circuits.
 
-A breadboard is a collection of several rows of electrical slots. They are sized to fit LEDs, buttons, resistors, and any standard surface-mount electrical component. Each row is generally two columns, each with 5 slots. These 5 slots are connected to each other and nothing else. Therefore, putting wires in two of these slots is identical to physically connecting the wires together.
+A breadboard is a collection of several rows of electrical slots. They are sized to fit LEDs, buttons, resistors, and any standard through-hole electrical components. Each row is generally two columns, each with 5 slots. These 5 slots are connected to each other and nothing else. Therefore, putting wires in two of these slots is identical to physically connecting the wires together.
 
 Each row is independent: they are not attached between rows, nor are they attached across the large gutter that separates the two main columns.
 
@@ -251,4 +251,4 @@ Looking at the bottom of a breadboard can make these connections clear.
 
 ## Conclusion
 
-Anyway, that's it. That's your 4,000 word primer to E&M for CSE102. You should know everything you need to build circuits in this class. Good luck!
+Anyway, that's it. That's your 4,000 word primer to E&M for CSE132. You should know everything you need to build circuits in this class. Good luck!
