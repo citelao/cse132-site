@@ -21,15 +21,18 @@ By the end of this assignment, you should know how to wire up circuits that prod
 
 ### Potentiometers
 
-Potentiometers are **variable resistors**, if you've had any experience with circuits. Basically, they resist very little current when they're turned to one extreme, and resist almost all current when they're turned to the other. In between, they generally scale their resistance linearly or logarithmically. Hence the term variable resistor: their resistance varies depending on how much they're turned.
+### Potentiometers
 
-They generally have three pins: a positive pin, a negative pin, and an output pin. The positive pin goes to your voltage source, the negative to ground, and the output to wherever you wish the output to go. In most cases, you want to attach the output to an analog input on your Arduino. 
+Potentiometers are **variable resistors**, three-terminal circuit elements in which the resistance between the terminals can be varied by turning a physical knob. Two of the terminals allow connection to each end of a fixed resistance, and the third terminal (often called the **wiper**) can be positioned at any point between the end terminals.
 
-The output is usually the middle pin and you can choose positive and negative pins arbitrarily from the other two. N.B.---this is **not** true for every electrical element, though.
+A common use for a potentiometer (**pot** for short) is as a **voltage divider**.  If one end terminal is at a positive voltage (say, +5V) and the other terminal is at ground (aka 0V), the wiper voltage will then have a voltage between 0 and +5V, with the specific voltage at the wiper terminal determined by the position of the control knob of the pot.
 
-The variable resistance of a pot has another implication. Since it does not resist current at one extreme, it has the ability to short circuit a connection from high to ground if there are no other resistors present. Make sure to include a resistor between it and its connection to source or ground. 
+In essence, the wiper terminal effectively divides the voltage across the end terminals, with the term **divides** coming from the mathematical expression $\frac{R_w}{R_p} \times (5V)$, where $R_p$ is the total resistance between the two end terminals, and $R_w$ is the (variable) resistance between the wiper and the end terminal at 0 V (ground). If $R_w$ is 0 ohms, the voltage at the wiper terminal is 0V.  If $R_w$ is equal to $R_p$ ohms, the voltage at the wiper terminal is 5 V.  Therefore, if we connect the wiper terminal to an analog input pin of the Arduino, we now have the ability for the user to provide a control input. Note that this "division" does not change the resistance at the other terminals.
 
-If none of that made sense, consider reading our [Intro to Circuits](TODO).
+The wiper terminal is the middle pin and you can choose positive and negative pins arbitrarily from the other two. N.B.---this is **not** true for every electrical element, though.
+If, when you get the entire circuit running (including software), you notice that turning the knob clockwise lowers the voltage, feel free to swap the end terminals to clockwise motion of the know gives an increasing voltage.
+
+If none of that made sense, consider reading our [Intro to Circuits](/~cse132/guides/intro-to-circuits.html).
 
 ### Analog input & output
 
@@ -83,37 +86,66 @@ Let's get started with the assignment.
 	<aside class="sidenote">
 	### Overwhelming circuit diagram syndrome
 	{:.no_toc}
-	Circuits are overwhelming if you haven't wired many before. Just make sure your final potentiometer circuit looks like this:
 	
-	TODO image of pot circuit + diagram
+	Circuits are hard. It takes a certain amount of intuition to understand them, intuition you might not have if you are just learning circuits. If the main circuit for this studio is confusing, we suggest two things:
 
-	If you cannot understand the schematic diagram easily, you should consider reading our [Intro to Circuits](TODO) guide and doing **Studio 1B**.
+	1. Read our [Intro to Circuits](/~cse132/guides/intro-to-circuits.html) guide.
+	2. Wire up some simple circuits, provided below.
+	
+	#### Simple LED
+	{:.no_toc}
+
+	The first circuit is simple: just light up an LED. The diagram puts the resistor after the LED, but the order does not matter.
+
+	![A simple resisted LED circuit.](../img/ledcircuit.png)
+
+	1. Connect 5V to a row on your breadboard.
+	2. Attach a 200ohm resistor (or as close as possible that you have) as a bridge between this power row and another row. The red LED we are using needs a resistance of about 200 ohms, using a simple calculation you can learn in a physics class.
+	3. Attach the long stem of your LED to this resisted row and the other stem to an adjacent row.
+	4. Ground this final row.
+
+	Your LED should light up whenever your Arduino is plugged in.
+
+	#### Dimmable LED
+
+	If you were successful with this, it might make sense to attach your LED to a PWM pin instead. You can then write a simple program to test out `analogWrite()` before the big multi-color LED. The diagram for this is not particularly illuminating.
+
+	1. Use the circuit from above, but instead of pulling from the `5V` pin on your Arduino, pull from a PWM pin (marked with a `~` on your board).
+	2. Write a simple program (using `analogWrite()` and `delay()`) to gradually fade your LED from on to off.
+
+	This should be more than enough to get you started reading ciruit diagrams.
+
 	</aside>
-	Wire up a circuit from the 5V pin, through a potentiometer, to the analog pin of your choice (look for the pins labeled `A0`-`A5`). Make sure to resist the pot's connection to ground.
-	
-	You can test the circuit by `analogRead()`ing from that pin and `Serial.print()`ing the result. It should be a fluid number between `0` and `1023` as you turn the potentiometer.
-3. Wire up your RGB LED to 3 PWM pins on your Arduino. You need PWM in order to modulate the brightness of each color. Keep in mind that only some pins are PWM pins. The reference for [`analogWrite()`](https://www.arduino.cc/en/Reference/AnalogWrite) helps there.
 
-	The RGB LED is basically 3 LEDs in one little case, so naturally it has 3 input leads and one output. The longest lead is the common one, although whether it's the cathode or the anode may vary. Thankfully, it doesn't matter.
+	We need to build our circuit. The final circuit diagram follows, and we will guide you through building it:
+
+	![The RGB-pot circuit diagram.](../img/assignment-circuit.png)
+
+	1. Attach the **potentiometer**: wire up a circuit from the `5V` pin, through a potentiometer, to ground. Use the two *outer* pins for these connections, although the order does not matter. Connect the final pin (the center pin) to an analog pin of your choice (look for the pins labeled `A0`-`A5`).
 	
-	TODO image of common anode and common cathode RGB LED
-	
-	You'll want to resist each of the three other leads individually.
-	
-	Your circuit should look something like this:
-	
-	TODO image of circuit.
-	
-	You can test this circuit by `analogWrite()`ing to each of these pins in your Arduino code. The corresponding color should light up.
+		You can test the circuit by `analogRead()`ing from that pin and `Serial.print()`ing the result. It should be a fluid number between `0` and `1023` as you turn the potentiometer.
+	2. Attach the **LED**: attach resistors to 3 PWM pins your Arduino (you need PWM to modulate each color's brightness). Keep in mind that only some pins are PWM pins. The reference for [`analogWrite()`](https://www.arduino.cc/en/Reference/AnalogWrite) helps there. 
+
+		It's easiest to connect the pins directly to rows on your breadboard with plain wires, then attach resistors from those rows to new rows. You will attach the LED to these new rows.
+
+		But first, we need to decied which resistors to use for which pin. We give you several different types of resistors, each with slightly different resistances. Luckily, these LEDs are tolerant enough to support any real ordering, but there is an "optimal" resistance for each color. Try to choose the closest resistance for each: red, 180ohms; green, 250ohms; blue, 300ohms.
+
+		Each stem is attached to a different color LED, as you can see in the diagram, with stem `2` as the **common cathode**[^cathode]. You have two ways of numbering the other stem `1`, `3`, and `4`. The easiest is to note that stem `2` is the longest. The other is to find the flat end of the otherwise round LED. The stems count away from it, starting at `1` closest to the notch, and `4` farthest.
+
+		Stem `1` is red, stem `3` is blue, and stem `4` is green.
+
+		You can test this circuit by `analogWrite()`ing to each of these pins in your Arduino code. The corresponding color should light up.
 4. Complete the Arduino code so that it linearly scales between two colors of your choice as the potentiometer goes from completely open to almost closed. 
 	
 	However, decide upon a cutoff voltage (you work for a *very* safety-minded company) that switches the LED to pure red and causes it to blink slowly (using `delay()` as in Studio). When the potentiometer is turned back below this threshold, the program resumes. There can be a small lag before the program resumes (as in, don't try to fix it if one occurs. We'll explain how to get rid of it later).
+
+[^cathode]: There are two types of RGB LEDs, **common cathode** and **common anode**. As you might guess, one has a shared cathode as the long stem, and the other has a shared anode as the long stem. Common anode LEDs are actually controlled by writing *high* to the colors you want to shut off, and providing a constant `HIGH` at the anode. Because there is no potential difference at those *high* cathodes, there is no current and no light. We don't use common anode LEDs in this class.
 
 ### Guidelines
 
 You are given pretty much free reign to complete this assignment as you choose. However, in order to make our lives a lot easier once it comes time to grade everything, pay attention to these coding guidelines, as well as the [style guide](/~cse132/style-guide/) for this class:
 
-- Use exactly **four resistors** in your circuitry.
+- Use exactly **three resistors** in your circuitry.
 - Keep arbitrary constants (pin numbers, cutoff thresholds, colors, etc) as **compile-time constants** near the top of your Arduino program, using [`#define MY_CONSTANT value`](https://www.arduino.cc/en/Reference/Define).
 - Use consistent and high-quality **indentation**. Better programmers use better indentation. So be a better programmer.
 - **Read up** on `analogRead()` and `analogWrite()` from the Arduino documentation. It's very good.

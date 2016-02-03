@@ -54,7 +54,7 @@ So, what is a circuit? A **circuit** is a continuous flow of electric charge[^ch
 
 "Electric charge" as a concept on its own is hard to explain. It's an intrinsic property of matter, just like mass or position. What does that mean?
 
-An object's **electric charge** is a measurement of *how affected* it is when placed in a magnetic field. Just like you can think of mass as a measure of how hard it is to change an object's velocity (more massive objects are harder to start moving), electric charge is a measure of *how much* or *to what extent*---an empirical property that can only change by transforming the object into something else. 
+An object's **electric charge** is a measurement of *how affected* it is when placed in a magnetic field. This is similar to how you can think of mass as a measure of *how hard it is* to change an object's velocity (more massive objects are harder to start moving). Electric charge and mass are both measures of *how much* or *to what extent*---empirical properties that can only change by transforming the object into something else. 
 
 We describe circuits as "flows of electric charge," but in reality that is a simplification. In most cases, it is a real particle *with electric charge* that flows. However, many different particles carry electric charge, and in very different ways, so thinking about the charge itself flowing rather than mediator particles flowing is very helpful.
 
@@ -166,8 +166,6 @@ Because engineers don't like drawing realistically, we have the **circuit diagra
 {:.no_toc}
 
 Circuit diagrams use straight lines for wires. Because wiring can get pretty intense, overlapping wires *don't* connect unless there's a dot drawn over them or it's T-intersection.
-
-[TODO? t-intersection, dot intersection, no dot]
 </aside>
 
 The paperclip-battery circuit looks something like this:
@@ -184,7 +182,15 @@ The main symbol in this circuit is the battery, attached to the thin wire. Actua
 
 Resistors have fixed resistances that you can determine by reading the colored bands printed on them. These are codes that label the resistance.
 
-TODO reading a resistor
+The bands follow a specific order:
+
+- Between 2 and 3 **digit** bands
+- A **multiplier** band
+- A **tolerance** band
+
+To get the resistance, concatenate the **digits** (`2` and `3` would give `23`) and multiply by the **multiplier** (perhaps `1K`). The resistor resists within a **tolerance** of that number.
+
+There are two questions then: what numbers do the colors represent, and what direction do I read in? I'm not going to bore you with a list of colors and numbers when you can just google it, but I will say that orientation is generally easy: the **tolerance** and **multiplier** have two colors that the digits don't use (silver and gold). These are the most common tolerances. Also, the tolerance is usually physically separated from the other bands, placed at a different edge of the resistor.
 </aside>
 
 This paperclip circuit is an example of poor decision making. The simplest *sensible* circuit, i.e. the simplest circuit I *recommend* building, includes another component: a **resistor**.
@@ -205,11 +211,13 @@ Looking up how to work with new components (like potentiometers, switches, capac
 
 ### LEDs & diodes
 
-**LEDs** are fickle creatures. Unlike traditional lightbulbs, LEDs cannot be placed onto a circuit heedlessly. First, LEDs have **no resistance** (or very little). A circuit with just an LED is similar to the paperclip-battery circuit. It must be resisted separately, with an additional resistor. Second, LEDs only allow current in **one direction**. If placed backward, they will not light up.
+**LEDs** are fickle creatures. Unlike traditional lightbulbs, LEDs cannot be placed onto a circuit heedlessly. First, LEDs have **very little resistance** (or very little). A circuit with just an LED is similar to the paperclip-battery circuit. It must be resisted separately, with an additional resistor. Second, LEDs only allow current in **one direction**. If placed backward, they will not light up.
 
 These traits are shared among all **diodes**---LED stands for "Light Emitting Diode." Diodes prevent current flowing in one direction and let it through unimpeeded in the other. Take care not to explode your LEDs: place resistors on their circuits (different colors have different optimum resistances; read their spec sheets).
 
 ![An LED circuit includes a resistor as well. The LED symbol has arrows around it indicating that it emits light.](circuits/ledcircuit.png)
+
+You want to attach the long end (the **anode**) closer to the positive side of your battery and the short end (the **cathode**)
 
 ### Arduino input & outut pins
 
