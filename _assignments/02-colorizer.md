@@ -153,7 +153,7 @@ You are given a lot of flexibility to complete this assignment as you choose. Ho
 ## The check-in
 1. Click on the following link to download the [Assignment 2 cover page](https://wustl.box.com/shared/static/wbthn3uzxrhslz8mkrb5tf1rqbmotdqp.txt).
 2. Locate this file (which should be called cover-page.txt) in the **Downloads** folder on your computer.  
-3. Drag and drop this file into the `Arduino > assignenment2` folder in your cse132_sp16 repository on **eclipse** while in the **Java perspective**.  
+3. Drag and drop this file into the `Arduino > assignment2` folder in your cse132_sp16 repository on **eclipse** while in the **Java perspective**.  
 4. Fill `cover-page.txt` out
 5. Right click on the top level of your repository and select `Team > Commit` in order to commit your cover page to your repository.
 6. Doing this should also commit the changes to your code. Make sure all the files are correctly committed by looking at http://svn.seas.wustl.edu/repositories/USERNAME/cse132_sp16 on your internet browser.
