@@ -133,7 +133,7 @@ Let's get started with the assignment.
 
 		Terminal `1` is red, terminal `3` is blue, and terminal `4` is green.
 
-		You can test this circuit by `analogWrite()`ing to each of these pins in your Arduino code. The corresponding color should light up. The full datasheet for the RGB LED can be found [here](http://www.kingbrightusa.com/images/catalog/SPEC/WP154A4SUREQBFZGW.pdf). Look closely at the images on the first page.
+		You can test this circuit by `analogWrite()`ing to each of these pins in your Arduino code. The corresponding color should light up. The full data-sheet for the RGB LED can be found [here](http://www.kingbrightusa.com/images/catalog/SPEC/WP154A4SUREQBFZGW.pdf). Look closely at the images on the first page.
 3. Complete the Arduino code so that it linearly scales between two colors of your choice as the potentiometer goes from completely open to completely closed. E.g., pick two colors, A and B.  If the potentiometer is at it's minimum, the LED should show all A.  If the pot is at is't maximum, the LED should show all B.  If it is half-way, it should show the color between A and B (if A is green and B is blue, half-way is cyan).
 
 	
@@ -151,6 +151,15 @@ You are given a lot of flexibility to complete this assignment as you choose. Ho
 - **Read up** on `analogRead()` and `analogWrite()` from the Arduino documentation. It's very good.
 
 ## The check-in
+1. Click on the following link to download the [Assignment 2 cover page](https://wustl.box.com/shared/static/wbthn3uzxrhslz8mkrb5tf1rqbmotdqp.txt).
+2. Locate this file (which should be called cover-page.txt) in the **Downloads** folder on your computer.  
+3. Drag and drop this file into the `Arduino > assignenment2` folder in your cse132_sp16 repository on **eclipse** while in the **Java perspective**.  
+4. Fill `cover-page.txt` out
+5. Right click on the top level of your repository and select `Team > Commit` in order to commit your cover page to your repository.
+6. Doing this should also commit the changes to your code. Make sure all the files are correctly committed by looking at http://svn.seas.wustl.edu/repositories/USERNAME/cse132_sp16 on your internet browser.
+7. Demo your assignment to one of the TAs during either lab hours or TA office hours. To avoid using a late ticket, do this by 5:30 pm on Wednesday February 10th. 
+
+###Rubric
 
 - 15pts: Did the lab work?
 	- Is it wired correctly?
@@ -161,4 +170,4 @@ You are given a lot of flexibility to complete this assignment as you choose. Ho
 	- Complete?
 	- Correctness: PWM
 	- Correctness: `analogRead()` conversions
-	- Correctness: resisting circutits
+	- Correctness: resisting circuits
