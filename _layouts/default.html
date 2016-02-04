@@ -13,7 +13,9 @@
 
 			{% include footer.html %}
 	</div>
+	<script type="text/javascript" src="{{ "/js/highlight.pack.js" | prepend: site.baseurl }}"></script>
 	<script type="text/x-mathjax-config">
+		hljs.initHighlightingOnLoad();
 		MathJax.Hub.Config({
 		tex2jax: {
 			inlineMath: [ ["$", "$"], ["\\(", "\\)"] ],
