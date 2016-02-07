@@ -54,7 +54,7 @@ If you wish, it is fine to use your RGB LED (used in assignment 1) as the
 	### Structuring
 	{:.no_toc}
 
-	While certainly not required, we believe it's easiest to structure your program as a **finite state machine**. We recommend reading our [Introduction to FSMs TODO](TODO) guide, as it will make your program *significantly* easier to reason about.
+	While certainly not required, we believe it's easiest to structure your program as a **finite state machine**. We recommend reading our [Introduction to FSMs](/~cse132/guides/intro-to-FSMs.html) guide, as it will make your program *significantly* easier to reason about.
 
 	If you successfully implement a FSM, your `loop()` should become a two or three step process:
 
@@ -73,7 +73,7 @@ If you wish, it is fine to use your RGB LED (used in assignment 1) as the
 	
 	For example, if I had a task I wanted to run every second, like in the heartbeat project:
 	
-	```c
+	~~~ c
 	long accumulator = 0;
 	void loop() {
 		if(millis() - accumulator > 1000) {
@@ -81,7 +81,7 @@ If you wish, it is fine to use your RGB LED (used in assignment 1) as the
 			Serial.print("beat");
 		}
 	}
-	```
+	~~~
 	
 	Because there's no delay, this `if` statement does not block program execution: I could have several more timers and accumulators executing at once.
 	
