@@ -1,6 +1,15 @@
-# Studio 3: Stoplight Engineering
+---
+title: Stoplight Engineering
+author: Ben Stolovitz
+week: 3
+assigned: 2016-02-08
+due: 2016-02-08
+---
 
 ## Introduction
+
+* this will be a TOC 
+{:toc}
 
 Last week, you explored some of the differences between the Arduino and your regular computer: though your Arduino could connect to and directly control circuits, it was too slow to keep time well using `delay()`.
 
@@ -40,8 +49,10 @@ If you wish, it is fine to use your RGB LED (used in assignment 1) as the
 	In fact, let's put that to rest right now by writing out constants for the different states of our system. Consider the different phases an intersection has: One light is green, then it is yellow, then the other light is green, etc. You can reduce the system down to four different intervals for the stoplights and one for the walk signal (recall the discussion in lecture).
 	
 	Use `const int`s at the start of your program to define these numbers in milliseconds[^define]. To underscore our point, choose a prime number for at least one of the traffic intervals, like `3041`.
-3. <aside class="sidenote">
+3. 
+	<aside class="sidenote">
 	### Structuring
+	{:.no_toc}
 
 	While certainly not required, we believe it's easiest to structure your program as a **finite state machine**. We recommend reading our [Introduction to FSMs TODO](TODO) guide, as it will make your program *significantly* easier to reason about.
 
@@ -52,7 +63,7 @@ If you wish, it is fine to use your RGB LED (used in assignment 1) as the
 	- independently flash walk signal
 
 	Since the code for each process is fairly long, separate each phase into a different function. I guarantee this will make your program simpler to understand and explain.
-</aside>
+	</aside>
 
 	To make this timing work, we will no longer use `delay()`. Instead, we implement **delta-based timing**. It's a powerful concept used in everything from slow computers to the most recent blockbuster video games (it's actually [vital to them](http://gafferongames.com/game-physics/fix-your-timestep/)).
 
