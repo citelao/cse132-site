@@ -36,12 +36,12 @@ If you wish, it is fine to use your RGB LED (used in assignment 1) as the
 
 	Any resistor value between 200 ohms and 500 ohms will work fine.
 	
-	Since the LEDs represent different combined components (streetlights and walk signals), grouping them appropriately will help you understand the system better.
+	Since the LEDs represent different combined components (stoplights and walk signals), grouping them appropriately will help you understand the system better.
 2. Test your connections by writing (and saving in `Arduino/studio3/`) a simple Arduino sketch called `LEDtest` that turns the 8 LEDs on and off. Maybe start with your `heartbeat` sketch from last week?
 
 ## Getting the light to change
 
-1. Open the `streetlight` sketch in `Arduino/studio3/streetlight/`. It should be basically empty.
+1. Open the `stoplight` sketch in `Arduino/studio3/stoplight/`. It should be basically empty.
 2. From last week, you should know that using `delay()`-based timing is inaccurate. Furthermore, it is a **blocking** procedure: your Arduino literally waits for however long you specify, not running any other code until the delay is completed. 
 
 	This is not good for our stoplight: we have to time many different states (NS light green, NS light yellow, EW light green, etc.) while also maintaining constant flashing on the walk signals. We *could* carefully architect our times so that these states and flashes correspond (i.e. the flash interval is a factor of the state duration, so you could measure state changes in "number of flashes"). But there's a better solution that doesn't require such convoluted reasoning.
@@ -106,6 +106,6 @@ Changes to repo structure:
 
 - `Arduino/`
 	- `studio3/`
-		- `streetlight/streetlight.ino`
+		- `stoplight/stoplight.ino`
 		- `LEDtest/LEDtest.ino`
 </section>
