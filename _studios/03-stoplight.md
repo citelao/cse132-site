@@ -26,8 +26,21 @@ By the end of this studio, you should know:
 
 The first step in programming an intersection is building the intersection.
 
-1. Wire up the intersection by hooking up 8 LEDs to your Arduino: two traffic lights (red, yellow, and green), and one pedestrian "walk" indicator (both "walk" and "don't walk", any color). 
-If you wish, it is fine to use your RGB LED (used in assignment 1) as the
+1. 
+	<aside class="sidenote">
+	### Total transmit failure
+	{:.no_toc}
+	
+	Your first inclination might be to start at pin 0, then work up from there as you add pins. This will not work.
+	
+	Pins 0 and 1 are `RX` and `TX` pins: they are connected to the same parts of your Arduino that handle receiving and transmitting data from the computer. The upshot of this? If you attach a circuit to these pins, uploading probably won't work.
+	
+	As a result, the convention in Arduino is to wire starting at pin 13 and work down.
+	</aside>
+
+	Wire up the intersection by hooking up 8 LEDs to your Arduino: two traffic lights (red, yellow, and green), and one pedestrian "walk" indicator (both "walk" and "don't walk", any color). 
+
+	If you wish, it is fine to use your RGB LED (used in assignment 1) as the
 "walk"/"don't walk" indicator.  One traffic light is to represent a North-South (NS) road, and the other represents an East-West (EW) road. The intersection has a single walk indicator with 2 LEDs: when it is safe to walk across the road, one "walk" LED will flash. When it is not safe to walk across the road, the other "don't walk" LED (maybe a red one?) will be on.
 
 	Attach each discrete LED to a digital pin, making sure that each's path to ground has a series resistor as indicated in the diagram below:
