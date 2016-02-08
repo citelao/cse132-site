@@ -26,9 +26,9 @@ By the end of this studio, you should know:
 
 The first step in programming an intersection is building the intersection.
 
-1. Wire up the intersection by hooking up 8 LEDs to your Arduino: two traffic lights (red, yellow, and green), and two "walk" indicators (any color). 
+1. Wire up the intersection by hooking up 8 LEDs to your Arduino: two traffic lights (red, yellow, and green), and one pedestrian "walk" indicator (both "walk" and "don't walk", any color). 
 If you wish, it is fine to use your RGB LED (used in assignment 1) as the
-"walk" indicators.  One traffic light is to represent a North-South (NS) road, and the other represents an East-West (EW) road. The intersection has a single walk indicator with 2 LEDs: when it is safe to walk across the road, one walk LED will flash. When it is not safe to walk across the road, the other walk LED (maybe a red one?) will be on.
+"walk"/"don't walk" indicator.  One traffic light is to represent a North-South (NS) road, and the other represents an East-West (EW) road. The intersection has a single walk indicator with 2 LEDs: when it is safe to walk across the road, one "walk" LED will flash. When it is not safe to walk across the road, the other "don't walk" LED (maybe a red one?) will be on.
 
 	Attach each discrete LED to a digital pin, making sure that each's path to ground has a series resistor as indicated in the diagram below:
 
@@ -74,7 +74,7 @@ If you wish, it is fine to use your RGB LED (used in assignment 1) as the
 	For example, if I had a task I wanted to run every second, like in the heartbeat project:
 	
 	~~~ c
-	long accumulator = 0;
+	long int accumulator = 0;
 	void loop() {
 		if(millis() - accumulator > 1000) {
 			accumulator += 1000;
@@ -85,13 +85,13 @@ If you wish, it is fine to use your RGB LED (used in assignment 1) as the
 	
 	Because there's no delay, this `if` statement does not block program execution: I could have several more timers and accumulators executing at once.
 	
-	Use a delta time loop to make your stoplight change appropriately. You  will need to use a global variable to keep track of the state of your intersection and another as the accumulator. This is why we recommend using a FSM (see sidebar).
+	Use a delta time loop to make your stoplight change appropriately controlling the lights for the two streets (ignore the pedestrians for the moment). You  will need to use a global variable to keep track of the state of your intersection and another as the accumulator. This is why we recommend using a FSM (see sidebar).
 	
 [^define]: In Assignment 2, we recommended using `#define` over `const int`. This was a mistake on our part. `#defines` are slightly better in pure C, but we recommend `const int`s in Arduino C for type safety. [This StackOverflow answer](http://arduino.stackexchange.com/a/14187) explains the reasoning for `const int`.
 
 ## Just add pedestrians
 
-Because a delta time loop does not block, you can have other timers running at the same time, even if they have very ugly common factors. For example, strategy games update the game state very rarely (maybe 7Hz) but redraw the screen very frequently (60Hz). They just have two delta time loops, one for game state and one for screen state.
+Because a delta time loop does not block, you can have other timers running at the same time, even if they have very ugly common factors. For example, strategy games update the game state very rarely (maybe 7 Hz) but redraw the screen very frequently (60 Hz). They just have two delta time loops, one for game state and one for screen state.
 
 1. Add another delta time segment to your program to flash the walk signals appropriately. When the road is crossable, one of the walk LEDs should flash, and when the road is not crossable it should be off and the other walk LED should be on.  If you have used the RGB LED for your walk indicators, be creative with your color choices here!
 
