@@ -99,7 +99,7 @@ Let's get started with the assignment.
 	![A simple resisted LED circuit.](../img/ledcircuit.png)
 
 	1. Connect 5V to a row on your breadboard.
-	2. Attach a 330 ohm resistor (or as close as possible that you have) as a bridge between this power row and another row. The red LED we are using needs a resistance of about 330 ohms, using a simple calculation you can learn in a physics class.
+	2. Attach a 220 ohm resistor (or as close as possible that you have) as a bridge between this power row and another row. The red LED we are using needs a resistance of about 220 ohms, using a simple calculation you can learn in a physics class.
 	3. Attach the long stem of your LED to this resisted row and the other stem to an adjacent row.
 	4. Ground this final row.
 
