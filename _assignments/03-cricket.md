@@ -34,9 +34,9 @@ The output voltage is independent of the supply voltage: it is a linear function
 
 To get the temperature from a voltage, then, you could use the equation (solved out so it should only be useful to check your answers):
 
-$$ T = \frac{V_{measured}}{.02V} - 12.5 ^{\circ} C $$
+$$ T = 100 V_{measured} - 50 $$
 
-Where $T$ is temperature and $V_{measured}$ is the output voltage.
+where $T$ is temperature in $^{\circ}C$ and $V_{measured}$ is the sensor voltage in volts (remember, 1 V = 1000 mV).
 
 ### Analog Reference
 
