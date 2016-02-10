@@ -34,9 +34,9 @@ The output voltage is independent of the supply voltage: it is a linear function
 
 To get the temperature from a voltage, then, you could use the equation (solved out so it should only be useful to check your answers):
 
-$$ T = 100 V_{measured} - 50 $$
+$$ T_C = 100 V_{measured} - 50 $$
 
-where $T$ is temperature in $^{\circ}C$ and $V_{measured}$ is the sensor voltage in volts (remember, 1 V = 1000 mV).
+where $T_C$ is temperature in $^{\circ}C$ and $V_{measured}$ is the sensor voltage in volts (remember, 1 V = 1000 mV).
 
 ### Analog Reference
 
@@ -60,7 +60,7 @@ A rolling average filter takes a new data point, finds the mean of the $N$ most 
 
 In mathematical speak:
 
-$$ y_i = \frac{1}{N} \sum\limits_{j=0}^{N} x_{i-j} $$
+$$ y_i = \frac{1}{N} \sum\limits_{j=0}^{N-1} x_{i-j} $$
 
 It is only possible to do this if you store the $N$ most recent data points, and the easiest way to do this is with an **array**.
 
@@ -90,7 +90,7 @@ void setup() {
 2. Connect the center, output pin of your temperature sensor to an analog pin. Then attach the power pin to `+5V` and the ground pin to `GND`. If you hold the pins of your temperature sensor towards you and point the flat notch up, the source pin is on the left (pin 1) and the ground pin is on the right (pin 3).
 
 	Make sure you can `analogRead()` from it, even if you haven't set `analogReference()` yet.
-3. Write a simple delta time loop to `analogRead()` the temperature at 40 Hz (40 times a second). For now, just `Serial.print()` it out, without any conversion.
+3. Write a simple delta time loop to `analogRead()` the temperature at 4 Hz (4 times a second). For now, just `Serial.print()` it out, without any conversion.
 4. Set `analogReference()` to `INTERNAL`. This will change what each value of `analogRead()` corresponds to (`1023` will now correspond to $1.1V$, not $5V$), which will be important when you...
 5. Convert the raw `analogRead()` value into a temperature, first by converting the raw value into a voltage, then into a temperature from the [spec sheet for the TMP36](http://www.analog.com/media/en/technical-documentation/data-sheets/TMP35_36_37.pdf).
 
@@ -178,6 +178,9 @@ Now that your filtering is done, you can use this filtered temperature to make a
 	Your final circuit should look like this:
 
 	![The final circuit](../img/circuit.png)
+
+	Note that this picture has the LED connected to the Arduino pin and the resistor connected to ground.  Either order is fine, Arduino pin then LED then resistor then ground, or Arduino pin then resistor then LED then ground.
+
 2. Don't use `delay()` *at all* in this lab. We will *penalize* you if you do. The delta timing alternative we use is an important concept, and if it is not crystal clear, try reading some more about it and working through examples.
 
 	[Adafruit](https://learn.adafruit.com/multi-tasking-the-arduino-part-1/using-millis-for-timing) has a nice tutorial, as does [StackOverflow](http://electronics.stackexchange.com/a/67090). Adafruit takes some code from [the Arduino tutorial](https://www.arduino.cc/en/Tutorial/BlinkWithoutDelay). Work through some problems, try to see if you can understand the idea in a generic form.
@@ -207,14 +210,14 @@ New files:
 ### The rubric
 
 - 15pts: Did the lab they demoed work?
-	- 3pts: Is the circuit wired correctly?
-	- 4pts: Do they correctly use the thermistor?
-	- 2pts: Do they correctly filter the data?
-	- 2pts: Did they graph the data witha noticeable temperature spike?
-	- 2pts: Did they use proper delta-time loops?
-	- 2pts: Is it easy to grade?
+	- Is the circuit wired correctly?
+	- Do they correctly use the thermistor?
+	- Do they correctly filter the data?
+	- Did they graph the data witha noticeable temperature spike?
+	- Did they use proper delta-time loops?
+	- Is it easy to grade?
 - 5pts: Is the cover page correct?
-	- 2pt: Cover page completely filled
-	- 1pt: Correctness --- Dolbear's law inversion
-	- 1pt: Correctness --- `analogRead` values
-	- 1pt: Correctness --- Temperature range and accuracy
+	- Cover page completely filled
+	- Correctness --- Dolbear's law inversion
+	- Correctness --- `analogRead` values
+	- Correctness --- Temperature range and accuracy
