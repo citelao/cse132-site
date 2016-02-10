@@ -44,7 +44,7 @@ In order to read the temperature output by our sensor, you need to read the volt
 
 An `analogRead()` returns a number between `0` and `1023` that corresponds to a voltage. In the case of your potentiometer, the `1023` corresponded to $5V$. It turns out that this "upper limit voltage" can be changed. This **reference voltage**, on our Arduinos at least, can be one of two values: $5V$ or $1.1V$.
 
-For our potentiometer, the standard reference voltage ($5V$) made sense because the output ranged from 0 to $5V$. For the temperature sensor, that is less true. Using the equation above, $1.1V$ corresponds to $42 ^{\circ} C$---or $107 ^{\circ} F$. That is well above the temperature of Wash U's classrooms (especially in winter), and a lower reference voltage gives us more resolution ($\frac{5V}{1024ticks} \approx .005 \frac{V}{tick}$ whereas $\frac{1.1V}{1024ticks} \approx .001 \frac{V}{tick}$), so it makes sense to use a lower reference voltage.
+For our potentiometer, the standard reference voltage ($5V$) made sense because the output ranged from 0 to $5V$. For the temperature sensor, that is less true. Using the equation above, $1.1V$ corresponds to $60 ^{\circ} C$. That is well above the temperature of Wash U's classrooms (especially in winter), and a lower reference voltage gives us more resolution ($\frac{5V}{1024ticks} \approx .005 \frac{V}{tick}$ whereas $\frac{1.1V}{1024ticks} \approx .001 \frac{V}{tick}$), so it makes sense to use a lower reference voltage.
 
 It's not fast enough to do rapidly in your program, but at the beginning of your program (in `setup()`), you can use `analogReference()` to [change the reference voltage to `INTERNAL`](https://www.arduino.cc/en/Reference/AnalogReference).
 
@@ -86,15 +86,16 @@ void setup() {
 
 ### The basic system
 
-1. Wire an LED output to the digital output pin of your choice (skipping 0 and 1), include a series resistor, and attach it to ground (this is the same as the discrete LEDs we wired in studio). Make sure you can turn it on and off.
+1. Wire an LED output to the digital output pin of your choice (avoiding digital output pins 0 and 1), include a series resistor, and attach it to ground (this is the same as the discrete LEDs we wired in studio). Make sure you can turn it on and off.
 2. Connect the center, output pin of your temperature sensor to an analog pin. Then attach the power pin to `+5V` and the ground pin to `GND`. If you hold the pins of your temperature sensor towards you and point the flat notch up, the source pin is on the left (pin 1) and the ground pin is on the right (pin 3).
 
 	Make sure you can `analogRead()` from it, even if you haven't set `analogReference()` yet.
-3. Write a simple delta time loop to `analogRead()` the temperature at 4 Hz (4 times a second). For now, just `Serial.print()` it out, without any conversion.
+3. Write delta time code to `analogRead()` the temperature at 4 Hz (4 times a second). For now, just `Serial.print()` the return value from `analogRead()`, without any conversion.
 4. Set `analogReference()` to `INTERNAL`. This will change what each value of `analogRead()` corresponds to (`1023` will now correspond to $1.1V$, not $5V$), which will be important when you...
-5. Convert the raw `analogRead()` value into a temperature, first by converting the raw value into a voltage, then into a temperature from the [spec sheet for the TMP36](http://www.analog.com/media/en/technical-documentation/data-sheets/TMP35_36_37.pdf).
+5. Convert the raw `analogRead()` value into a temperature. Mathematically this is a two step procedure, first converting the raw value into a voltage (i.e., understanding what voltage the temperature probe is generating given the A/D counts returned from `analogRead()`), then into a temperature from the [spec sheet for the TMP36](http://www.analog.com/media/en/technical-documentation/data-sheets/TMP35_36_37.pdf).
 
 	The spec sheet provides a **scale factor** ($\frac{mV}{C}$) of how much output voltage changes for every degree Celsius and a base voltage that is output at $25^{\circ} C$. With that data point and the slope, you can create an equation that transforms voltage into temperature and vice versa. While the counts returned by `analogRead()` are of type `int`, you likely will want to use variables of type `float` to perform the computation and store the resulting temperature value.
+ 	While the above description is for a two step transformation, feel free to combine the two steps into a single mathematical expression that gives temperature (in degrees C) when provided a return value from `analogRead()`.
 
 	Print out both the raw A/D counts and the converted temperature value until you are confident that your temperature is right.
 
@@ -114,7 +115,7 @@ To fix that, we will apply a simple a simple filter: a **rolling average**.
 		int count = 0;
 	
 		void loop() {
-			if(/* delta time loop code */) {
+			if(/* delta time code */) {
 				readTemp();
 				/* more delta time stuff */
 			}
@@ -153,7 +154,7 @@ Now that your filtering is done, you can use this filtered temperature to make a
 	
 	where $T_C$ is the temperature in Celsius and $N_{60}$ is the number of chirps in a minute.
 	
-	You can solve this in terms of chirps *per second*. By inverting it (1 / chirps per second) you get a period, *seconds per chirp*. If you convert this number into milliseconds per chirp, you can use this as the duration of a delta time loop to flash your LED.
+	You can solve this in terms of chirps *per second*. By inverting it (1 / chirps per second) you get a period, *seconds per chirp*. If you convert this number into milliseconds per chirp, you can use this as the duration of a delta time iteration to flash your LED.
 	
 	Solve this equation to determine a period, a number that you can use in a separate delta time conditional to flash a cricket LED.
 2. However, even with this number, flashing the LED is not that simple. You need to keep track of whether or not your LED is on (like with a [`boolean`](https://www.arduino.cc/en/Reference/BooleanVariables)), and then alternate between *two* intervals for this "flash" delta time loop:
