@@ -6,10 +6,10 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: "CSE132 SP2016: Introduction to Computer Science II"
+title: "CSE132 SP2016: Computer Science II"
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
-  WUSTL's CSE132 homepage for Spring 2016: Introduction to Computer Science II
+  WUSTL's CSE132 homepage for Spring 2016: Computer Science II
 baseurl: "/~cse132" # the subpath of your site, e.g. /blog
 url: "http://www.classes.cec.wustl.edu" # the base hostname & protocol for your site
 
