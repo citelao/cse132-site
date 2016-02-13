@@ -29,7 +29,7 @@ The first step is setting up the necessary Java libraries.
 
 1. The following files have been made available in the `jars/` directory of your
 repositories: `RXTXcomm.jar`, `rxtxSerial.dll`, and `librxtxSerial.jnilib`.
-Also, `SerialComm.java` and `PrintStreamPanel` have been provided in
+Also, `SerialComm.java` and `PrintStreamPanel.java` have been provided in
 the `java/studio4/` directory.
 If you don't see them, you need to perform a repository update.
 
