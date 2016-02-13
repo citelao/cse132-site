@@ -28,7 +28,7 @@ By the end of this studio, you should know:
 The first step is setting up the necessary Java libraries.
 
 1. The following files have been made available in the `jars/` directory of your
-repositories: `RXTXcomm.jar`, `rxtxSerial.dll`, and `librxtxSerial.jnlib`.
+repositories: `RXTXcomm.jar`, `rxtxSerial.dll`, and `librxtxSerial.jnilib`.
 Also, `SerialComm.java` and `PrintStreamPanel` have been provided in
 the `java/studio4/` directory.
 If you don't see them, you need to perform a repository update.
@@ -41,9 +41,9 @@ a library (using the `Add Jars ...` button on the right).
 3. Once the jar file is listed as a library, expand it and double click
 on "Native library location", indicating the `jars/` directory in the
 workspace.  Note: during this last step, the `rxtxSerial.dll` and
-`librxtsSerial.jnlib` files will not be visible during the selection.
+`librxtxSerial.jnilib` files will not be visible during the selection.
 You are selecting the directory that contains them.  FYI: `rxtxSerial.dll`
-is the native library for Windows and `librxtxSerial.jnlib` is the native
+is the native library for Windows and `librxtxSerial.jnilib` is the native
 library for the Mac.
 
 4. The `SerialComm` and `PrintStreamPanel` class files
@@ -163,7 +163,7 @@ Changes to repo structure:
 - `jars/`
 	- `RXTXcomm.jar`
 	- `rxtsSerial.dll`
-	- `librxtsSerial.jnlib`
+	- `librxtsSerial.jnilib`
 - `java/`
 	- `studio4/`
 		- `PrintStreamPanel.java`
