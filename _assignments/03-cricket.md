@@ -191,9 +191,9 @@ Now that your filtering is done, you can use this filtered temperature to make a
 
 ## The check-in
 
-1. Download the [`cover-page.txt`](../src/cover-page.txt) and fill it out.
+1. Open the `cover-page.txt` file in `Arduino/assignment3/` and fill it out.
 2. Make *sure* your numbers make sense.
-3. Commit all your code and graphs (make sure to add all the new files to your repo first)
+3. Commit all your code and graphs (make sure to add all the new files to your repo first).
 4. Check out with a TA.
 
 New files:
@@ -204,7 +204,7 @@ New files:
 	- `assignment3/`
 		- `cover-page.txt`
 		- `cricket/cricket.ino`
-		- A graph of your temperature data (in Excel)
+		- A graph of your temperature data (in Excel or something similar)
 
 </section>
 
@@ -212,9 +212,9 @@ New files:
 
 - 15pts: Did the lab they demoed work?
 	- Is the circuit wired correctly?
-	- Do they correctly use the thermistor?
+	- Do they correctly read the temperature sensor?
 	- Do they correctly filter the data?
-	- Did they graph the data witha noticeable temperature spike?
+	- Did they graph the data with a noticeable temperature change?
 	- Did they use proper delta-time loops?
 	- Is it easy to grade?
 - 5pts: Is the cover page correct?
