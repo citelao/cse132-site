@@ -29,7 +29,7 @@ and receiving messages in that protocol in Java on the PC.
 
 Quoting
 from [Wikipedia](https://en.wikipedia.org/wiki/Communications_protocol),
-*protocols* "are the rules that define the syntax,
+*protocols*, "are the rules that define the syntax,
 semantics and synchronization of communication and possible error recovery
 methods."
 Syntax is basically how does one express something.

@@ -57,7 +57,7 @@ You will use them both to accomplish the tasks below.
 1. The first task is to have a Java program receive data sent by the Arduino.
 We will start simple.
 
-	In `java/studio4`, create a new Class (called `SerialTest`) that will
+	In `java/studio4`, create a new Class (called `SerialTestInput`) that will
 (in its `main()` method) print to the console bytes that it receives from
 the serial port.
 You will need to instantiate a new `SerialComm` class, and invoke its
@@ -132,7 +132,7 @@ Arduino sketch (save the altered version in `Arduino/studio4/datatypetest`)
 to periodically send a single integer.  Send the high byte (most signficant
 byte) first and the low byte (least signficant byte) second.
 
-	Alter `SerialTest` to combine the two received bytes and store the result
+	Alter `SerialTestInput` to combine the two received bytes and store the result
 in a Java integer.  (Remember, Java's integers are 4 bytes, so there is
 plenty of space for a two byte number to fit.)
 
@@ -168,6 +168,6 @@ Changes to repo structure:
 	- `studio4/`
 		- `PrintStreamPanel.java`
 		- `SerialComm.java`
-		- `SerialTest.java`
+		- `SerialTestInput.java`
 		- `ViewInputStream.java`
 </section>
