@@ -8,6 +8,9 @@ due: 2016-02-17
 
 ## The idea
 
+* This will be a toc
+{:toc}
+
 Crickets chirp at a rate proportional to external temperature: you can actually [calculate the temperature from the rate at which crickets chirp](https://en.wikipedia.org/wiki/Dolbear%27s_law) to within a degree or so. What with today's rapidly moving world, it's come time to build a digital cricket, so that we may do what nature does more precisely and accurately.
 
 ## The background
