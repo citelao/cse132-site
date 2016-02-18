@@ -1,6 +1,5 @@
 ---
 title: Introduction to Finite State Machines
-week:
 author: Josh Gelbard and Ben Stolovitz
 short: FSMs
 week:
