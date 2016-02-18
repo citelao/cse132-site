@@ -196,7 +196,7 @@ your `DataInputStream`s `readInt()` method (because normal `int`s are 4 bytes in
 
 [^negative]: This size difference actually has a large impact when dealing with negative numbers, which, as in all systems, are stored in two's complement. Since a number's negativity is entirely dependent on its first bit, naively sending the Arduino `int` bytes to Java will not correctly send a negative number. 
 
-	The solution is **sign extension**. Bitshifting right in Java (and on signed values in C) automatically copies the highest bit in all the extended places (`0xff >> 8 == 0xfff`, `0x0d >> 8 == 0x00d`). This preserves the value of the number, though that exact proof is left as an excercise for the reader.
+	The solution is **sign extension**. Bitshifting right in Java (and on signed values in C) automatically copies the highest bit in all the extended places (`0xff00 >> 16 == 0xffff`, `0x0d00 >> 8 == 0x00d0`). This preserves the value of the number, though that exact proof is left as an excercise for the reader.
 
 ## Finish up
 

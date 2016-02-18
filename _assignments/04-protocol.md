@@ -233,6 +233,7 @@ New files:
 - `java/`
 	- `assignment4/`
 		- `MsgReceiver.java`
+		- `ViewInputStream.java`
 
 </section>
 
